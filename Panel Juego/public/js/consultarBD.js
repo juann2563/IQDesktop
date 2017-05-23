@@ -4,12 +4,15 @@ function mostrarRespuesta(){
     $("#p_respuesta").show(1000);
     $('#countdown').countdown360().stop();
 }
+
+
+
 function consultaBD(){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
     
     //alert(bg);
     //abre la ventan modal y consulta la base de datos
-    $('#myModal').modal('show');
+    $('#myModal').modal('show');  
     // var bg = $("#backImg" + cont).css("background-image");
     // bg = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
     var preguntas = [];
@@ -24,15 +27,15 @@ function consultaBD(){
 
     // Initialize the database:
     var db = new sqlite3.Database(dbFile);
-    db.all(query + "SELECT * FROM A", function(err, rows) {  
+    db.all("SELECT * FROM A", function(err, rows) {  
         rows.forEach(function (row) {
 
             preguntas[0] = row.Pregunta;
             respuestas[0] = row.Respuesta;
             $('#p_pregunta').text('' + preguntas[0]);
             $('#p_respuesta').text('' + respuestas[0]);  
-            alert(row);  
         })  
     });  
-    db.close();   
+    db.close();
+
 }  

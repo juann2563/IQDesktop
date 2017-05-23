@@ -33,7 +33,8 @@ function mensajeAlert(mensaje){
 function validarRegistro(){
 	
 	//Se obtienes los valores de los campos nombre e institución
-
+	var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');      // replace T with a space
+  	alert(date);
 	var equipo = $('#equipo').val();
     var institucion = $('#institucion').val();
 
