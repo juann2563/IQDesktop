@@ -1,0 +1,20 @@
+{
+  "name": "panel_juego",
+  "version": "1.0.0",
+  "description": "db",
+  "main": "public/index.html",
+  "author": "zabala",
+  "license": "ISC",
+  "window": {
+    "title": "APP",
+    "icon": "icon.png",
+    "toolbar": false,
+    "resizable": true,
+    "frame": true,
+    "fullscreen": false,
+    "position": "center"
+  },
+  "dependencies": {
+    "sqlite3": "^3.1.8"
+  }
+}
