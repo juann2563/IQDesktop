@@ -17,6 +17,5 @@ $(document).ready(function(){
 	statement.finalize();
 	// Close the database:
 	db.close();
-    alert("Hello");
   });
 });
