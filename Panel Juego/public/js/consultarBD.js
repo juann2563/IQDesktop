@@ -1,11 +1,9 @@
-//var preguntas = [];
-//var respuestas = [];
+var preguntas = [];
+var respuestas = [];
 function mostrarRespuesta(){
     $("#p_respuesta").show(1000);
     $('#countdown').countdown360().stop();
 }
-
-
 
 function consultaBD(){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
@@ -15,8 +13,8 @@ function consultaBD(){
     $('#myModal').modal('show');  
     // var bg = $("#backImg" + cont).css("background-image");
     // bg = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
-    var preguntas = [];
-    var respuestas = [];
+    //var preguntas = [];
+    //var respuestas = [];
     var sqlite3 = require('sqlite3').verbose();
     var fs  = require('fs');
     //const path = require('path');
