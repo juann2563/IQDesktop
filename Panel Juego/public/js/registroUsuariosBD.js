@@ -1,4 +1,4 @@
-function coneccionBD(equipo,institucion,avatar){
+function coneccionBD(equipo,institucion,avatar,date){
 	var sqlite3 = require('sqlite3').verbose();
 	var fs  = require('fs');
 	//const path = require('path');
@@ -11,10 +11,10 @@ function coneccionBD(equipo,institucion,avatar){
 	var db = new sqlite3.Database(dbFile);
 
 	// Insert some data using a statement:
-	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo', 'institucion',avatar) " +
-	'VALUES (?, ?,?)');
+	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo, 'institucion','avatar','fecha') " +
+	'VALUES (?, ?,?,?)');
 	//ejecuto el query a la base de datos
-	statement.run(equipo, institucion,avatar);
+	statement.run(equipo, institucion,avatar,date);
 	statement.finalize();
 	// Close the database:
 	db.close();
@@ -32,9 +32,11 @@ function mensajeAlert(mensaje){
 }
 function validarRegistro(){
 	
-	//Se obtienes los valores de los campos nombre e institución
+	// Get Date when a user is registered
 	var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');      // replace T with a space
-  	alert(date);
+  	
+	//Se obtienes los valores de los campos nombre e institución
+	
 	var equipo = $('#equipo').val();
     var institucion = $('#institucion').val();
 
@@ -91,7 +93,7 @@ function validarRegistro(){
 		    $('#equipo').val('');
 		    $('#institucion').val('');
 		    $('a').removeClass("active");
-		    coneccionBD(equipo, institucion, avatar);
+		    coneccionBD(equipo, institucion, avatar,date);
 		  } 
 		});
     	return false;
