@@ -6,12 +6,14 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/image-picker.css">
     <link rel="stylesheet" type="text/css" href="css/estilosRegistro.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/iqi.png"/>
     <!-- include the style -->
 	
     <script src = "jquery/jquery-3.1.1.min.js"></script>
     <!-- include the script -->
     <script src="js/sweetalert.min.js"></script>
+    <script src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 	
     <!--Inicia la aplicación maximizada con la api de nw.js-->
@@ -96,6 +98,12 @@
 				<div class="form-group">
 					<label class="control-label" for="institucion">Nombre Institución</label>
 					<input type="text" class="form-control" id="institucion" placeholder="Institución" name="institucion">
+				</div>
+				<!--Campo Selecciona el color del equipo-->
+				<div class="form-group">
+					<label class="control-label" for="color">Color Equipo</label>
+					<div class="preview"></div>
+					<!-- colorpicker element -->
 				</div>
 				<!--Campo donde irá la seleccion del avatar-->
 				<div class="form-group">
@@ -194,6 +202,7 @@
 			</form>
 		</div>
 	</div>
+	
 	<script src="js/bootstrap.min.js"></script>
 	<!-- <script src="js/validator.min.js"></script> -->
 </body>
