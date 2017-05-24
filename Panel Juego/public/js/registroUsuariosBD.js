@@ -11,7 +11,7 @@ function coneccionBD(equipo,institucion,avatar,date){
 	var db = new sqlite3.Database(dbFile);
 
 	// Insert some data using a statement:
-	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo, 'institucion','avatar','fecha') " +
+	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo', 'institucion','avatar','fecha') " +
 	'VALUES (?, ?,?,?)');
 	//ejecuto el query a la base de datos
 	statement.run(equipo, institucion,avatar,date);
@@ -33,8 +33,9 @@ function mensajeAlert(mensaje){
 function validarRegistro(){
 	
 	// Get Date when a user is registered
-	var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');      // replace T with a space
-  	
+	var date = new Date().toString();
+	// extract only date and hour from date
+  	var res = date.substring(0, 24);
 	//Se obtienes los valores de los campos nombre e institución
 	
 	var equipo = $('#equipo').val();
@@ -93,7 +94,7 @@ function validarRegistro(){
 		    $('#equipo').val('');
 		    $('#institucion').val('');
 		    $('a').removeClass("active");
-		    coneccionBD(equipo, institucion, avatar,date);
+		    coneccionBD(equipo, institucion, avatar, res);
 		  } 
 		});
     	return false;
