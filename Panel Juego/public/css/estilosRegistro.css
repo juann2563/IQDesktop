@@ -49,11 +49,11 @@ img{
   width: 100%;
 }
 #selectAvatar{
-	z-index: 10;
+	z-index: -10;
 }
 #selectColor{
-	z-index: 50;
+	z-index: 5;
 }
 .thumbnail{
-	z-index: 10;
+	z-index: -10;
 }
