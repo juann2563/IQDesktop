@@ -102,22 +102,22 @@
 				<!--Campo Selecciona el color del equipo-->
 				<div class="form-group">
 					<label class="control-label" for="color">Color Equipo</label>
-					<div class="container" id="color">
-						<div class="preview" data-toggle="collapse"></div>
+					<!--boton para mostrar el color picker-->
+					<div class="preview"></div>
 						<!-- colorpicker element -->
-						<div class="colorpicker collapse">
-                <canvas id="picker" var="2" width="300" height="300"></canvas>
+					<div class="colorpicker" style="display: none !important;">
+	                	<canvas id="picker" var="2" width="300" height="300"></canvas>
 
-                <div class="controls">
-                    <div><label>R</label> <input type="text" id="rVal" /></div>
-                    <div><label>G</label> <input type="text" id="gVal" /></div>
-                    <div><label>B</label> <input type="text" id="bVal" /></div>
-                    <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
-                    <div><label>HEX</label> <input type="text" id="hexVal" /></div>
-                </div>
-                
-            </div>
-					</div>
+	                	<div class="controls">
+	                    	<div><label>R</label> <input type="text" id="rVal" /></div>
+	                    	<div><label>G</label> <input type="text" id="gVal" /></div>
+	                    	<div><label>B</label> <input type="text" id="bVal" /></div>
+	                    	<div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+	                    	<div><label>HEX</label> <input type="text" id="hexVal" /></div>
+	                	</div>
+
+            		</div>
+					
 				</div>
 				<!--Campo donde irá la seleccion del avatar-->
 				<div class="form-group">
