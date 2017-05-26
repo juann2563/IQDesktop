@@ -78,6 +78,11 @@ function validarRegistro(){
     	mensajeAlert(msg);
     	return false;
     }
+    if(equipo != "" && institucion == "" && avatar != null){
+    	var msg = "Tiene que ingresar el nombre de la institución";
+    	mensajeAlert(msg);
+    	return false;
+    }
     if(equipo != "" && institucion != "" && avatar != null){
     	var msg = "Equipo Registrado";
     	swal({
