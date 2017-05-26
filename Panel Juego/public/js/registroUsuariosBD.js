@@ -1,4 +1,4 @@
-function coneccionBD(equipo,institucion,avatar,date){
+function coneccionBD(equipo,institucion,avatar,date,color){
 	var sqlite3 = require('sqlite3').verbose();
 	var fs  = require('fs');
 	//const path = require('path');
@@ -11,10 +11,10 @@ function coneccionBD(equipo,institucion,avatar,date){
 	var db = new sqlite3.Database(dbFile);
 
 	// Insert some data using a statement:
-	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo', 'institucion','avatar','fecha') " +
-	'VALUES (?, ?,?,?)');
+	var statement = db.prepare("INSERT INTO 'usuarios' ('equipo', 'institucion','avatar','fecha','color') " +
+	'VALUES (?, ?,?,?,?)');
 	//ejecuto el query a la base de datos
-	statement.run(equipo, institucion,avatar,date);
+	statement.run(equipo, institucion,avatar,date,color);
 	statement.finalize();
 	// Close the database:
 	db.close();
@@ -99,7 +99,9 @@ function validarRegistro(){
 		    $('#equipo').val('');
 		    $('#institucion').val('');
 		    $('a').removeClass("active");
-		    coneccionBD(equipo, institucion, avatar, res);
+		    //colorTeam is a global varable from selectColorTeam for 
+		    // get the current color team
+		    coneccionBD(equipo, institucion, avatar, res,colorTeam);
 		  } 
 		});
     	return false;

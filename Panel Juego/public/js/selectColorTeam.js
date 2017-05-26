@@ -8,7 +8,8 @@
  * Copyright 2012, Script Tutorials
  * http://www.script-tutorials.com/
  */
-
+ //Global variable for color team
+var colorTeam = "#000000";
 $(function(){
     var bCanPreview = true; // can preview
 
@@ -62,6 +63,8 @@ $(function(){
             $('#rgbVal').val(pixel[0]+','+pixel[1]+','+pixel[2]);
 
             var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
+            colorTeam = ('#' + ('0000' + dColor.toString(16)).substr(-6)).toUpperCase();
+ 
             $('#hexVal').val('#' + ('0000' + dColor.toString(16)).substr(-6));
         }
     });
