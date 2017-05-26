@@ -50,7 +50,7 @@ function validarRegistro(){
 	que si llenó correctamente no se borre el texto y solo sea llenar 
 	el campo faltante*/
     if (equipo == "" && institucion == "" && avatar == null){
-    	var msg = "Campos nombre, institución y avatar son requeridos";
+    	var msg = "Debe ingresar el nombre del equipo, la institución y escoger un avatar";
     	
     	mensajeAlert(msg);
     	/*con el return false, se mantien los datos ingresdos por el usuario
@@ -58,28 +58,28 @@ function validarRegistro(){
         return false;
     }
     if(equipo == "" && institucion != "" && avatar == null){
-    	var msg = "Campos nombre y avatar son requeridos";
+    	var msg = "Debe ingresar el nombre del equipo y escoger un avatar";
     	mensajeAlert(msg);
     	return false;
     }
     if(equipo != "" && institucion == "" && avatar == null){
-    	var msg = "Campos institucion y avatar son requeridos";
+    	var msg = "Debe ingresar el nombre de la institucion y escoger un avatar";
     	mensajeAlert(msg);
     	return false;
     }
     
     if(equipo != "" && institucion != "" && avatar == null){
-    	var msg = "avatar es requeridos";
+    	var msg = "Debe escoger un avatar";
     	mensajeAlert(msg);
     	return false;
     }
     if(equipo == "" && institucion == "" && avatar != null){
-    	var msg = "Campos Nombre e Institución son requeridos";
+    	var msg = "Debe ingresar el nombre del equipo y la institución";
     	mensajeAlert(msg);
     	return false;
     }
     if(equipo != "" && institucion == "" && avatar != null){
-    	var msg = "Tiene que ingresar el nombre de la institución";
+    	var msg = "Debe que ingresar el nombre de la institución";
     	mensajeAlert(msg);
     	return false;
     }
