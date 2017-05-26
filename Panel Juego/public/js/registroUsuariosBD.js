@@ -40,7 +40,7 @@ function validarRegistro(){
 	
 	var equipo = $('#equipo').val();
     var institucion = $('#institucion').val();
-
+    //var formulario = document.getElementBy'')
 	// //obtengo la ruta comleta y el nombre de la imagen del avatar seleccionado
 	var avatar = $('.active img').attr('src');
 	

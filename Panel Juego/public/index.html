@@ -85,7 +85,7 @@
 				<img src="imagenes/iqi.png">
 			</div>
 			<br>
-			<form action="" method="post" name="form" id="form_registro" onsubmit="return validarRegistro();">
+			<form name="form" id="form_registro" onsubmit="return validarRegistro();">
 			<!--campo ingresa nombre de equipo-->
 				<div class="form-group" id="form_equipo" >
 					<!--En el atributo for es el Id del elemento input-->
@@ -204,14 +204,14 @@
 				</div>
 				<!--Botón para agregar equipo-->
 				<div class="col-xs-12 col-sm-12 col-md-6">
-					<button type="submit" class="btn btn-primary btn-block" id="add_equipo">Agregar Equipo
+					<button class="btn btn-primary btn-block" id="add_equipo" onclick="validarRegistro();">Agregar Equipo
 					</button>
 				</div>
 					<!--Boton para completar registro-->
 				<div class="col-xs-12 col-sm-12 col-md-6">
-					<button class="btn btn-primary btn-block" id="completar_registro" onClick="newWindow()">
+					<a class="btn btn-primary btn-block" id="completar_registro" onClick="newWindow()">
 					Completar registro
-					</button>
+					</a>
 				</div>
 			</form>
 		</div>
