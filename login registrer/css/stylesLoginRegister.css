@@ -1,0 +1,35 @@
+header{
+	background: #009688;
+	/*con color defino el color del texto*/
+	color: white;
+}
+.container{
+	width: 650px;
+	height: 400px;
+}
+#iqi-icon{
+	width: 25%; 
+    margin: 0 auto;
+}
+#text-tabs{
+	text-align: center;
+	background: #009688;
+	color: white;
+}
+#btn-enviar{
+	background: #009688;
+	color: white;
+}
+#condiciones-reg{
+	font-weight: bold;
+}
+.jumbotron{
+	background: #F5F5F5;
+}
+
+
+/*para centrar el objeto se utilizan width al 50% y margin 0 auto*/
+/*#login-tab{
+	width: 50%; 
+    margin: 0 auto;
+}*/

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/stylesLoginRegister.css">
+	<title>LOGIN</title>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<h1>IQ Innovation</h1>
+		</div>
+	</header>
+	<br>
+	<!--Se crea el contenedor necesario con bootstrap para todo el login-->
+	<div class="container">
+	<!--Se carga el logo de la empresa-->	
+		<div class="jumbotron">
+			<img src="imagenes/login.png" class="img-responsive" id="iqi-icon">
+		<!--Se crean las tabs y se elimina la línea que crea automáticamente con el style border-bottom-->
+			<br>
+			<div class="row">
+				<ul class="nav nav-tabs" role="tablist" style="border-bottom:0px">
+					<li class="active col-xs-12 col-sm-6 " role="presentation">
+					<!--tab donde va a estar el login-->
+						<a href="#login" role="tab" aria-controls="login" aria-expanded="true" data-toggle="tab" id="text-tabs">Iniciar Sesion</a>
+					</li>
+					<li class="col-xs-12 col-sm-6" role="presentation">
+					<!--tab donde va a estar el registro-->
+						<a href="#Registro" role="tab" aria-controls="Registro" aria-expanded="true" data-toggle="tab" id="text-tabs">Registrarse</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tab-content">
+			<!--Se crea el contenido del tab login-->
+				<div class="tab-pane fade in active" id="login">
+					<br>
+					<form role="form">
+					<!--Se crea el campo para el login-->
+						<div class="form-group">
+							<!--label para indicar que tipo de campo es-->
+							<label for="usuario" class="control-label">Usuario</label>
+							<input type="text" class="form-control" id="usuario" placeholder="Ingrese Usuario">
+						</div>
+						<!--Se crea el campo para la contraseña-->	
+						<div class="form-group">
+							<label for="contraseña" class="control-label">Contraseña</label>
+							<input type="password" class="form-control" id="password" placeholder="Ingrese Contraseña">
+						</div>
+		
+						<!--Se crea el campo para el checkbox donde acepta las condiciones-->
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" value="" id="condiciones">Recordarme
+								</label>
+							</div>
+						</div>
+						<!--se crea el campo para el boton enviar-->
+						<div class="form-group">
+							<button class="btn btn-primary btn-lg btn-block" id="btn-enviar">Enviar</button>
+						</div>
+						<div class="form-group">
+							<a href="#" class="btn btn-link col-sm-12">¿Olvidó la contraseña?</a>
+							
+						</div>
+						<!--Se crea el contenido de la tab registrarse-->
+					</form>
+				</div>
+					<br>
+				<!--Se crea el contenido del tab registro-->
+					<div class="tab-pane fade" id="Registro">
+						<form class="form-horizontal">
+						<!--Se crea el campo Nombre-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="nombre">Nombre</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre">
+								</div>
+							</div>
+							<!--Se crea el campo Apellido-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="nombre">Apellido</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="apellido" placeholder="Ingrese Apellido">
+								</div>
+							</div>
+							<!--Se crea el campo Institución-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="nombre">Correo</label>
+								<div class="col-sm-10">
+									<input type="Email" class="form-control" id="email" placeholder="Ingrese Email">
+								</div>
+							</div>
+							<!--Se crea el campo institución-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="institucion">Institución</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="institucion" placeholder="Ingrese Institución">
+								</div>
+							</div>
+							<!--Se crea el campo usuario-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="nombre">Usuario</label>
+								<div class="col-sm-10">
+									<input type="usuario" class="form-control" id="usuario" placeholder="Ingrese Usuario">
+								</div>
+							</div>
+							<!--Se crea el campo contraseña-->
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="pass">Contraseña</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" id="pass" placeholder="Ingrese contraseña">
+								</div>
+							</div>
+							<!--Se crea el campo para aceptar las condiciones del servicio-->
+							<div class="form-group">
+								<div class="checkbox col-sm-12 " id="condiciones-reg">
+									<label>
+										<input type="checkbox" id="condiciones-reg">Acepto Las condiciones del servicio
+									</label>
+								</div>
+							</div>
+							<!--Se crea el campo para el boton enviar-->
+							<div class="form-group">
+								<a href="#" class="btn btn-primary btn-lg btn-block" id="btn-enviar">Enviar</a>
+							</div>
+
+						</form>
+					</div>
+			</div>
+		</jumbotron>
+	</div>
+
+
+
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

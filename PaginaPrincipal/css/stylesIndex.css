@@ -1,0 +1,15 @@
+/*Dimensiones de las imagenes de los páneles*/
+#img-panel{
+	width: 300px; 
+	height: 124px;
+}
+#panel-title{
+	margin-top: 0 auto; 
+	text-align: center;
+}
+/*Se centra laimagen de wimar*/
+#img-wimar{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
