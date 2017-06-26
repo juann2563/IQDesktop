@@ -4,20 +4,33 @@ var arriba = 0;
 var posleftInit = 20;
 var posleftAfter = 20+102/2;
 
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
 //Funcion para obtener los id de los hexágonos y posicionarlos correctamente
 function hexagonos(izquierda,arriba){
 	// se obtiene los id de los hexagonos
 	var x = document.getElementById("hexa"+i);
 	//asigno posición absoluta
     x.style.position = 'absolute';
+    
     //asigno posición a la izquierda
     x.style.left = izquierda+'px';
     //Asigno posición parte superior top
     x.style.top = arriba+'px';
     //$('#' + x).attr("data-toggle","modal");
     //$('#' + x).attr("data-target","#myModal");
-
-    
 }
 // utilizo un for para ir recorriendo todos los hexagonos creados e ir 
 //asignando la posicion necesaria

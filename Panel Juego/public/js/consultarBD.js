@@ -45,6 +45,7 @@ function consultaBD(){
                 $('#p_respuesta').text('' + respuestas[selectPregunta]);
                 selectPregunta++;    
             }
+            
 
             // rows.forEach(function (row) {
             //     preguntas[0] = row.Pregunta;
@@ -63,8 +64,7 @@ function consultaBD(){
         else{
             $('#p_pregunta').text('' + preguntas[selectPregunta]);
             $('#p_respuesta').text('' + respuestas[selectPregunta]);
-            selectPregunta++;
-            alert(selectPregunta);    
+            selectPregunta++;  
         }    
     }
 

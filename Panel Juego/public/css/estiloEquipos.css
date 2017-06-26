@@ -1,11 +1,7 @@
 body{
 	background: #E0E0E0;
 }
-#panelEquipo{
-	border-radius: 16px;
-    border: 2px solid #FFC107;
-    left: 8px;
-}
+
 .top-buffer { margin-top:20px; }
 a img{
 	height: 120px;
@@ -27,27 +23,49 @@ h1{
 	color: white;
 }
 
-.jumbotron{
-	
-    margin-top: 15px;
-    padding-top: 5px;
-    height: 600px;
-    width: 670px;
-    box-shadow: 10px 10px 5px 0px #999999;
+#equipos {
+    padding-left: 5px;
     background: white;
-}
-#jumbotron_equipos{
-	
-    margin-top: 15px;
-    padding-top: 5px; 
-    height: 600px;
-    width: 400px;
+    width: 321px;
+    height: 650px;
     box-shadow: 10px 10px 5px 0px #999999;
+}
+
+#hexagonos {
+    
+    background: #ECEFF1;
+    width: 700px;
+    height: 650px;
+    box-shadow: 10px 10px 5px 0px #999999;
+}
+
+#contenido {
+    float: right;
     background: white;
+    width: 322px;
+    height: 650px; ;
 }
-#container_hexa{
-	padding-left: 5px;
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
-#hexagonos{
-	padding-left: 10px;
+#imgEquipo1{
+    float: left;
 }
+#imgEquipo2{
+    float: left;
+}
+#imgEquipo3{
+    float: left;
+}
+#imgEquipo4{
+    float: left;
+}
+
+.progress-bar {
+    -webkit-transition: width 2.5s ease;
+    transition: width 2.5s ease;
+}
+
