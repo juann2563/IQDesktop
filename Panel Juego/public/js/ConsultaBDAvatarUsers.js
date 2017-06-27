@@ -12,6 +12,7 @@ function avatarUsers(equipo){
     db.all("SELECT * FROM usuarios ORDER BY ID DESC LIMIT 4", function(err, rows) {
         $('#imgEquipo'+ equipo).attr('src', ''+ rows[parseInt(equipo)-1].avatar);
         $('#textEquipo' + equipo).text('' + rows[parseInt(equipo)-1].equipo);
+        $('#modaltextEquipo4').html('' + rows[parseInt(equipo)-1].equipo);
     });
       
     db.close();
