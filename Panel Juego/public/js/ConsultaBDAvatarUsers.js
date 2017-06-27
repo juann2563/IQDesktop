@@ -11,7 +11,7 @@ function avatarUsers(equipo){
     var db = new sqlite3.Database(dbFile);
     db.all("SELECT * FROM usuarios ORDER BY ID DESC LIMIT 4", function(err, rows) {
         $('#imgEquipo'+ equipo).attr('src', ''+ rows[parseInt(equipo)-1].avatar);
-        $('#textEquipo' + equipo).text(""+ rows[parseInt(equipo)-1].equipo);
+        $('#textEquipo' + equipo).text('' + rows[parseInt(equipo)-1].equipo);
     });
       
     db.close();
