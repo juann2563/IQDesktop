@@ -4,20 +4,6 @@ var arriba = 0;
 var posleftInit = 20;
 var posleftAfter = 20+102/2;
 
-function myMove() {
-  var elem = document.getElementById("animate");   
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
-    }
-  }
-}
 //Funcion para obtener los id de los hexágonos y posicionarlos correctamente
 function hexagonos(izquierda,arriba){
 	// se obtiene los id de los hexagonos
