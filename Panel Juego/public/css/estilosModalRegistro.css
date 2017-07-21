@@ -19,22 +19,11 @@
 	border-radius: 10px;
 }
 
-#cerrar{
-	display: none;
+#saveConfig{
+	background: #ff6e40;
+	color: white;
+	box-shadow: #999 5px 5px 10px;
 }
-
-/*el atributo + seleccciona el elemento inmediatamnete siguiente al id seleccionado*/
-#cerrar + label{
-	position: fixed;
-	color: #fff;
-	font-size: 25px;
-	z-index: 50;
-	background: darkred;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 50%;
-	right: 10px;
-	cursor: pointer;
-
+#saveConfig:hover{
+	background: #ff6e40;
 }

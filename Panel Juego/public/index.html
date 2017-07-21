@@ -53,6 +53,7 @@
     </script>
     
 	<script type="text/javascript" src="js/registroUsuariosBD.js"></script>
+	<script type="text/javascript" src="js/selectNumTeam.js"></script>
 	<title>Registro Equipos</title>
 </head>
 <body>
@@ -64,13 +65,13 @@
 				<img src="imagenes/equipo1.png" width="40%" height="40%">
 			</figure>
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default  btn-lg">2</button>
-			  	<button type="button" class="btn btn-default  btn-lg">3</button>
-			  	<button type="button" class="btn btn-default  btn-lg">4</button>
+				<button type="button" class="btn btn-default  btn-lg" id="btn1" onclick="numTeam(this.id);">2</button>
+			  	<button type="button" class="btn btn-default  btn-lg" id="btn2" onclick="numTeam(this.id);">3</button>
+			  	<button type="button" class="btn btn-default  btn-lg" id="btn3" onclick="numTeam(this.id);">4</button>
 			</div>
 			<br>
 			<br>
-			<button type="button" class="btn btn-warning btn-lg">Guardar configuración</button>
+			<button type="button" class="btn btn-warning btn-lg" id="saveConfig" onclick="insertNumTeam();">Guardar configuración</button>
 		</div>
 	</div>
 
