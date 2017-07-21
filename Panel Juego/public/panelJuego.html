@@ -6,9 +6,10 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/estilosWebHexagon.css">
         <link rel="stylesheet" type="text/css" href="css/estiloHexagonos.css">
-        <link rel="stylesheet" href="css/estiloEquipos.css">
+        <link rel="stylesheet" href="css/estilosPanelJuego.css">
         <link rel="stylesheet" href="css/svgCountDown.min.css">
         <link rel="stylesheet" type="text/css" href="css/styleModal.css">
+        <link rel="stylesheet" href="css/preloader.css">
 
         <link rel="shortcut icon" href="imagenes/iqi.png" />
         <!-- <link rel="stylesheet" type="text/css" href="estiloHexagonosPos.css"> -->
@@ -26,20 +27,30 @@
     </head>
     <title>IQ Innovation</title>
     <body>
-        <header class="container-fluid">
+        <!--Preloader antes de cargar todo el panel del juego-->
+        <div class="container_preloader" id="container_preloader">
+            
+            <div class="preloader">
+                <p>Cargando...</p>
+            </div>   
+        </div>
+        <script type="text/javascript" src="js/cerrarPreloader.js"></script>
+        <header class="container-fluid" id="header" style="display: none;">
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="imagenes/iqi.png" alt="iqi" width="60" height="60">
+                    <img src="imagenes/iqi.png" alt="iqi" width="40" height="40">
                 </div>
                 <div class="col-sm-6">
-                    <h1 id="titulo_QQSI">Quien Quiere Ser Ingeniero</h1>
+                    <h1 id="titulo_QQSI">Quién Quiere Ser Ingeniero</h1>
                 </div>
                 <div class="col-sm-3">
                     
                 </div>
             </div>
         </header>
-        <div class="container-fluid">
+        
+        <!--Contenido del juego-->
+        <div class="container-fluid" id="panel" style="display: none;">
             <div class="row">
             <!--Campo para mostrar los 4 equipos que están participando
             en el instante-->
@@ -280,6 +291,7 @@
     </div>
                       
         <script src="js/bootstrap.min.js"></script>
+        
 
     </body>
 
