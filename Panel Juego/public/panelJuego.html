@@ -28,14 +28,14 @@
     <title>IQ Innovation</title>
     <body>
         <!--Preloader antes de cargar todo el panel del juego-->
-        <div class="container_preloader" id="container_preloader">
+        <!-- <div class="container_preloader" id="container_preloader">
             
             <div class="preloader">
                 <p>Cargando...</p>
             </div>   
         </div>
-        <script type="text/javascript" src="js/cerrarPreloader.js"></script>
-        <header class="container-fluid" id="header" style="display: none;">
+        <script type="text/javascript" src="js/cerrarPreloader.js"></script> -->
+        <header class="container-fluid" id="header">
             <div class="row">
                 <div class="col-sm-3">
                     <img src="imagenes/iqi.png" alt="iqi" width="40" height="40">
@@ -50,12 +50,12 @@
         </header>
         
         <!--Contenido del juego-->
-        <div class="container-fluid" id="panel" style="display: none;">
-            <div class="row">
+        <div class="flex-container" id="panel">
             <!--Campo para mostrar los 4 equipos que están participando
             en el instante-->
-                <div class="col-sm-3 nopadding" id="equipos">
+                <div class="flex-item" id="equipos">
                     <div class="panel-group">
+                        <!--Panel equipo 1-->
                         <div class="panel panel-default">
                             <div class="panel-heading" id="equipo1">
                                 <div>
@@ -66,6 +66,7 @@
                                     </script>
                                 </div>
                             </div>
+
                             <div class="panel-body">
                                 <h4>Preguntas Correctas</h4>
                                 <div class="progress">
@@ -92,8 +93,8 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading" id="equipo1">
+                        <div class="panel panel-default" style="display: none;">
+                            <div class="panel-heading" id="equipo3">
                                 <div>
                                     <img id="imgEquipo3" class="img-responsive" src="imagenes/avatar/dna.png" alt="" style="width: 64px; height: 64px;">
                                     <h3 id="textEquipo3" style="text-align: center;">Equipo3</h3>
@@ -130,27 +131,25 @@
                     </div>
                 </div>
                 <!--Panel con los hexágonos-->
-                <div class="col-sm-6 nopadding" id="hexagonos">
-                    <div id="container_hexa">
-
+                <div class="flex-item2">
+                <div class="flex-item3">
                             <script>
                                 //Se crean todos los hexagonos dentro de una columna de la grid de boostratp
                                 for(var i = 1; i<37; i++){
-                                    $('<div class="hexagon hexagon2" id="hexa'+i+'" onclick ="consultaBD();""><div class="hexagon-in1"><div class="hexagon-in2" id="backImg'+i+'"></div></div></div>').appendTo("#container_hexa");
+                                    $('<div class="hexagon hexagon2" id="hexa'+i+'" onclick ="consultaBD();""><div class="hexagon-in1"><div class="hexagon-in2" id="backImg'+i+'"></div></div></div>').appendTo(".flex-item2");
                                 }
                             </script>
 
                         <!--Scripts para generar los hexagonos y agregar las imágenes con las letras de los hexagonos-->
                             <script src="js/generarHexagonos.js"></script>
                             <script src="js/letrasHexagons.js"></script>
-                        
-                    </div>
-                <!--Panel equipos con preguntas correctas en incorrectas-->    
+                            </div>
+                <!--Panel equipos con preguntas correctas e incorrectas-->    
                 </div>
-                <div class="col-sm-3 nopadding" id="contenido">
+                <div class="flex-item">
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div class="panel-heading" id="equipo1">
+                            <div class="panel-heading" id="equipo2">
                                 <div>
                                     <img id="imgEquipo2" class="img-responsive" src="imagenes/avatar/genetics.png" alt="" style="width: 64px; height: 64px;">
                                     <h3 id="textEquipo2" style="text-align: center;">Equipo2</h3>
@@ -185,8 +184,8 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading" id="equipo2">
+                        <div class="panel panel-default" style="display: none;">
+                            <div class="panel-heading" id="equipo4">
                                 <div>
                                     <img id="imgEquipo4" class="img-responsive" src="imagenes/avatar/globe.png" alt="" style="width: 64px; height: 64px;">
                                     <h3 id="textEquipo4" style="text-align: center;">Equipo4</h3>

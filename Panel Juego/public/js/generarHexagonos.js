@@ -12,15 +12,15 @@ function hexagonos(izquierda,arriba){
     x.style.position = 'absolute';
     
     //asigno posición a la izquierda
-    x.style.left = izquierda+'px';
+    x.style.left = izquierda + 'px';
     //Asigno posición parte superior top
-    x.style.top = arriba+'px';
+    x.style.top = arriba + 'px';
     //$('#' + x).attr("data-toggle","modal");
     //$('#' + x).attr("data-target","#myModal");
 }
 // utilizo un for para ir recorriendo todos los hexagonos creados e ir 
 //asignando la posicion necesaria
-for (var i = 1; i<37; i++) {
+for (i = 1; i<37; i++) {
 	switch (i) {
 		case 7:
 			posleft = posleftAfter;
