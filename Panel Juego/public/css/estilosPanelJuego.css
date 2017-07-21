@@ -53,7 +53,13 @@ h1{
     background-color: cornflowerblue;
     width: 700px;
     height: 600px;
-    margin: auto;
+    margin: 10px;
+    
+}
+.flex-item3 {
+    background-color: cornflowerblue;
+    top: 0;
+    display: block;
     
 }
 
