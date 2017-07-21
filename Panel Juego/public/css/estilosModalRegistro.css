@@ -1,0 +1,40 @@
+
+.myModal{
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex; /*Se pone como caja flexible y permite centrarlo*/
+	z-index: 15;
+}
+
+.contenido{
+	width: 40%;
+	height: 60%;
+	margin: auto;
+	background: white;
+	border-radius: 10px;
+}
+
+#cerrar{
+	display: none;
+}
+
+/*el atributo + seleccciona el elemento inmediatamnete siguiente al id seleccionado*/
+#cerrar + label{
+	position: fixed;
+	color: #fff;
+	font-size: 25px;
+	z-index: 50;
+	background: darkred;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	right: 10px;
+	cursor: pointer;
+
+}

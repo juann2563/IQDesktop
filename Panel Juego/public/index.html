@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/image-picker.css">
     <link rel="stylesheet" type="text/css" href="css/estilosRegistro.css">
     <link rel="stylesheet" type="text/css" href="css/colorPicker.css">
+    <link rel="stylesheet" href="css/estilosModalRegistro.css">
     <link rel="shortcut icon" href="imagenes/iqi.png"/>
     <!-- include the style -->
 	
@@ -55,13 +56,30 @@
 	<title>Registro Equipos</title>
 </head>
 <body>
-	
+
+	<div class="myModal">
+		<div class="contenido">
+			<h2>Número de equipos a participar</h2>
+			<figure>
+				<img src="imagenes/equipo1.png" width="40%" height="40%">
+			</figure>
+			<div class="btn-group" role="group" aria-label="...">
+				<button type="button" class="btn btn-default  btn-lg">2</button>
+			  	<button type="button" class="btn btn-default  btn-lg">3</button>
+			  	<button type="button" class="btn btn-default  btn-lg">4</button>
+			</div>
+			<br>
+			<br>
+			<button type="button" class="btn btn-warning btn-lg">Guardar configuración</button>
+		</div>
+	</div>
+
     <!--contenedor principal necesario para bootstrap-->	
 	<div class="container">
 		<div class="jumbotron">
 			<!--LA imagen se adatpa a los tamaños de pantalla-->
 			<div class="img-responsive">
-				<img src="imagenes/iqi.png">
+				<img src="imagenes/iqi.png" id="logo_iqi">
 			</div>
 			<br>
 			<form name="form" id="form_registro" onsubmit="return validarRegistro();">

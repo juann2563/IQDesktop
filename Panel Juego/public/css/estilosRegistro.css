@@ -32,18 +32,27 @@ body{
 	text-align: center;
 	margin-top: 30px;
 }
-img{
+#logo_iqi{
 	width: 100px;
 	height: 100px;
 }
-.btn{
+#add_equipo{
 	background: #455A64;
 	color: white;
 	box-shadow: #999 5px 5px 10px;
 }
-.btn:hover{
+#add_equipo:hover{
 	background: #455A64;
 }
+#completar_registro{
+	background: #455A64;
+	color: white;
+	box-shadow: #999 5px 5px 10px;	
+}
+#completar_registro:hover{
+	background: #455A64;
+}
+
 .jumbotron{
 	margin-left: auto;
     margin-right: auto;
