@@ -39,46 +39,45 @@ h1{
     height: 100vh;
     margin: 0;
     background-color: lightgrey;
-    position: absolute;
+
+    justify-content: space-around;
 }
 
-.flex-item {
-    background-color: cornflowerblue;
+.flex-container .flex-item {
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    background-color: white;
     width: 300px;
     height: 600px;
     margin: 10px;
 }
-.flex-item2 {
+.flex-container .flex-item2 {
     position: relative;
-    background-color: cornflowerblue;
+    background-color: black;
     width: 700px;
     height: 600px;
-    margin: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #888888;
+    
     
 }
-.flex-item3 {
-    background-color: cornflowerblue;
-    top: 0;
+.flex-container .flex-item3 {
     display: block;
-    
+    border-radius: 5px;
+    background-color: white;
+    width: 300px;
+    height: 600px;
+    margin: 10px;
+}
+.panel-default{
+    border-radius: 10px;
 }
 
-/*#hexa1{
-    position: relative;
-    left: 10px;
-    top: 0px;
-    
-}
-#hexa2{
-    position: relative;
-    left: 300px;
-    top: 0px;  
-}
-#hexa10{
-    position: relative;
-    left: 70px;
-    top: 60px;  
-}*/
+
+
+
 
 #imgEquipo1{
     float: left;
