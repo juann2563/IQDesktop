@@ -32,7 +32,8 @@ h1{
 }*/
 
 .flex-container {
-    
+    margin: 0;
+    padding: 0;
     display: -webkit-flex;
     display: flex;
     width: 100%;
@@ -53,15 +54,19 @@ h1{
     margin: 10px;
 }
 .flex-container .flex-item2 {
+    padding: 0px;
     position: relative;
     background-color: black;
     width: 700px;
     height: 600px;
     margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px #888888;
-    
-    
+    box-shadow: 5px 5px 5px #888888;  
+}
+#hexa1{
+    position: absolute;
+    top: 0px;
+    left: 100px;
 }
 .flex-container .flex-item3 {
     display: block;
