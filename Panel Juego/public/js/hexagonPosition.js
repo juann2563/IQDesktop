@@ -1,5 +1,7 @@
 var i = 1;
 var posleft = 20;
+//empieza en -10 porque con 0 no se posiciona en la 
+//parte superior sino más abajo como si tuviera una margen
 var arriba = -10;
 var posleftInit = 20;
 var posleftAfter = 20+102/2;
