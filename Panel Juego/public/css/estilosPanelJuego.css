@@ -56,19 +56,12 @@ h1{
 .flex-container .flex-item2 {
     padding: 0px;
     position: relative;
-    background-color: black;
+    background-color: grey;
     width: 700px;
     height: 600px;
     margin-top: 10px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #888888;  
-}
-.hexagon-in2{
-    position: relative;
-    background-color:  white;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 .flex-container .flex-item3 {
@@ -82,10 +75,6 @@ h1{
 .panel-default{
     border-radius: 10px;
 }
-
-
-
-
 
 #imgEquipo1{
     float: left;
