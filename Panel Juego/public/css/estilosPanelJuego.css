@@ -63,11 +63,14 @@ h1{
     border-radius: 5px;
     box-shadow: 5px 5px 5px #888888;  
 }
-#hexa1{
-    position: absolute;
-    top: 0px;
-    left: 100px;
+.hexagon-in2{
+    position: relative;
+    background-color:  white;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
+
 .flex-container .flex-item3 {
     display: block;
     border-radius: 5px;

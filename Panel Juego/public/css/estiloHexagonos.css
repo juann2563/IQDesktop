@@ -7,7 +7,7 @@
          -o-transform: rotate(120deg);
             transform: rotate(120deg);
     cursor: pointer;
-    -webkit-transition:-webkit-transform 0.4s easy 0.1s;
+    -webkit-transition:-webkit-transform 0.6s easy 0.3s;
     }
 .hexagon-in1 {
     overflow: hidden;
