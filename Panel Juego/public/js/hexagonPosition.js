@@ -1,6 +1,6 @@
 var i = 1;
 var posleft = 20;
-var arriba = 0;
+var arriba = -10;
 var posleftInit = 20;
 var posleftAfter = 20+102/2;
 
@@ -24,7 +24,7 @@ for (i = 1; i<37; i++) {
 	switch (i) {
 		case 7:
 			posleft = posleftAfter;
-			arriba = 88;
+			arriba = 77.5;
 			break;
 
 		case 13:
