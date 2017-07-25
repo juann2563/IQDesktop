@@ -40,7 +40,7 @@ h1{
     height: 100vh;
     margin: 0;
     background-color: lightgrey;
-
+    /*pone el contenido justificado en la ventana, con mismo espacio entre elementos*/
     justify-content: space-around;
 }
 
