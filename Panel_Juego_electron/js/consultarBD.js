@@ -25,7 +25,7 @@ function consultaBD(){
         //const path = require('path');
         //const dbPath = path.resolve('QQSI_DB.db');
         // Setup database:
-        var dbFile = 'QQSI_DB.db';
+        var dbFile = './DB/QQSI_DB.db';
         var dbExists = fs.existsSync(dbFile);
 
         // Initialize the database:
