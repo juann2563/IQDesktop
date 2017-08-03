@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/image-picker.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosRegistro.css">
+    <link rel="stylesheet" type="text/css" href="css/colorPicker.css">
+    <link rel="stylesheet" href="css/estilosModalRegistro.css">
+    <link rel="shortcut icon" href="imagenes/iqi.png"/>
+    <!-- include the style -->
+	
+    <!-- Insert this line above script imports  -->
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!-- include the script -->
+    <script type="text/javascript" src="./jquery/jquery-3.1.1.min.js" ></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/selectColorTeam.js"></script>
+    <!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+	
+    <!--Inicia la aplicación maximizada con la api de nw.js-->
+
+    <!--javascript para detectar clic en avatar y asignar recuadro de selección-->
+    <script type="text/javascript">
+    	function reply_click(clicked_id){
+    		var id = clicked_id;
+    		//Obtiene el id del elemento que se hizo click
+    		var x = document.getElementById(clicked_id);
+    		//agrega la clase active al elemento, la cual pone un recuadro al elemento 
+    		// para mostrar que está activo
+			x.classList.add("active");
+			//obtengo la dirección del avatar selecccionado
+			var src = x.getAttribute('src');
+
+			for(var i=1; i<13; i++){
+				
+				if("th"+i == id){
+				}
+				else {
+					$('#th'+i).removeClass('active');
+				}
+			}	
+		}
+    </script>
+    <!--Abre en nueva ventana el panel juego-->
+    <script type="text/javascript">
+    	function newWindow(){
+    		var params = [
+    			'height='+ screen.height,
+    			'width='+ screen.width,
+    			'fullscreen=no' // only works in IE, but here for completeness
+			].join(',');
+    		window.open("panelJuego.html", 'popup_window', params, 'menubar=no');
+    	}
+    </script>
+    
+	<script type="text/javascript" src="js/registroUsuariosBD.js"></script>
+	<script type="text/javascript" src="js/selectNumTeam.js"></script>
+	<title>Registro Equipos</title>
+</head>
+<body>
+
+	<div class="myModal">
+		<div class="contenido">
+			<h2>Número de equipos a participar</h2>
+			<figure>
+				<img src="imagenes/equipo1.png" width="40%" height="40%">
+			</figure>
+			<div class="btn-group" role="group" aria-label="...">
+				<button type="button" class="btn btn-default  btn-lg" id="btn1" onclick="numTeam(this.id);">2</button>
+			  	<button type="button" class="btn btn-default  btn-lg" id="btn2" onclick="numTeam(this.id);">3</button>
+			  	<button type="button" class="btn btn-default  btn-lg" id="btn3" onclick="numTeam(this.id);">4</button>
+			</div>
+			<br>
+			<br>
+			<button type="button" class="btn btn-warning btn-lg" id="saveConfig" onclick="insertNumTeam();">Guardar configuración</button>
+		</div>
+	</div>
+
+    <!--contenedor principal necesario para bootstrap-->	
+	<div class="container">
+		<div class="jumbotron">
+			<!--LA imagen se adatpa a los tamaños de pantalla-->
+			<div class="img-responsive">
+				<img src="imagenes/iqi.png" id="logo_iqi">
+			</div>
+			<br>
+			<form name="form" id="form_registro" onsubmit="return validarRegistro();">
+			<!--campo ingresa nombre de equipo-->
+				<div class="form-group" id="form_equipo" >
+					<!--En el atributo for es el Id del elemento input-->
+					<label class="control-label" for="equipo" >Nombre Equipo</label>
+					<input type="text" class="form-control" id="equipo" placeholder="Equipo" name="equipo">
+					
+				</div>
+				<!--Campo ingresa nombre institución-->
+				<div class="form-group">
+					<label class="control-label" for="institucion">Nombre Institución</label>
+					<input type="text" class="form-control" id="institucion" placeholder="Institución" name="institucion">
+				</div>
+				<!--Campo Selecciona el color del equipo-->
+				<div class="form-group" id="selectColor">
+					<label class="control-label" for="color">Color Equipo</label>
+					<!--boton para mostrar el color picker-->
+					<div class="preview"></div>
+						<!-- colorpicker element -->
+					<div class="colorpicker" style="display: none !important;">
+	                	<canvas id="picker" var="2" width="300" height="300"></canvas>
+
+	                	<div class="controls">
+	                    	<div><label>R</label> <input type="text" id="rVal" /></div>
+	                    	<div><label>G</label> <input type="text" id="gVal" /></div>
+	                    	<div><label>B</label> <input type="text" id="bVal" /></div>
+	                    	<div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+	                    	<div><label>HEX</label> <input type="text" id="hexVal" /></div>
+	                	</div>
+
+            		</div>
+					
+				</div>
+				<!--Campo donde irá la seleccion del avatar-->
+				<div class="form-group" id="selectAvatar">
+				<!--Se le solucita selecconar un avatar-->
+					<label>Seleccione un Avatar</label>
+					<div class="row">
+						<!--Primera fila de avatar, serán en total 12-->
+					<!--Primer avatar-->
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th1" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/atom.png" alt="atom" id="img1">
+						   </a>
+						</div>
+
+						<!--Segund0 avatar-->
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th2" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/beaker-atom.png" alt="beaker-atom" id="img2">
+						   </a>
+						</div>
+						<!--tercer avatar-->
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th3" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/cube-molecule.png" alt="cube-molecule" id="img3">
+						   </a>
+						</div>
+						
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th4" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/dna.png" alt="dna" id="img4">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th5" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/genetics.png" alt="genetics" id="img5">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2" >
+						   <a class="thumbnail" id="th6" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/glasses.png" alt="glasses" id="img6">
+						   </a>
+						</div>
+
+						<!--Segunda Fila de avatars-->
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+						   <a class="thumbnail" id="th7" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/globe.png" alt="globe" id="img7">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+						   <a class="thumbnail" id="th8" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/head-brains.png" alt="head-brains" id="img8">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+						   <a class="thumbnail" id="th9" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/head-cross.png" alt="head-cross" id="img9">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+						   <a class="thumbnail" id="th10" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/magnet.png" alt="magnet" id="img10">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+						   <a class="thumbnail" id="th11" onClick="reply_click(this.id)">
+						      <img src="imagenes/avatar/moon.png" alt="moon" id="img11">
+						   </a>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-xs-12 col-lg-2">
+							<a class="thumbnail" id="th12" onClick="reply_click(this.id)">
+								<img src="imagenes/avatar/Newtons-cradle.png" alt="newton" id="img12">
+							</a>   
+						</div>
+					</div>
+				</div>
+				<!--Botón para agregar equipo-->
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<button class="btn btn-primary btn-block" id="add_equipo" onclick="validarRegistro();">Agregar Equipo
+					</button>
+				</div>
+					<!--Boton para completar registro-->
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<a class="btn btn-primary btn-block" id="completar_registro" onClick="newWindow()">
+					Completar registro
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/validator.min.js"></script> -->
+</body>
+</html>

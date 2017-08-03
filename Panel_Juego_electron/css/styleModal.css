@@ -1,0 +1,38 @@
+figure{
+    /*Con display: inline-block; hacemos que los elementos 
+    de dentro de figure (o cualquier otro selector) 
+    se comporten como línea y lo que hay fuera como bloque*/
+    display: inline-block;
+    padding: 1em;
+}
+/*Aplica las caracteristicas a las etiquetas img pero solo las que estén dentro de una etiqueta figure*/
+figure img{
+    padding: 5px;
+    /*background: #666;*/
+    /*Redondea los bordes*/
+    border-radius: 20px;
+    border-color: black;
+    /*cuando hay algun transform que afecte el elemento se utiliza la transición para que haga el transform más suave*/
+    /*ease-in-out es para poner un tiempo de inicio del transform cuando se ponga el cursor encima del elemento*/
+    -webkit-transition:-webkit-transform 0.4s ease-in-out 0.1s;
+    box-shadow: #999 5px 5px 10px;
+}
+figure img:hover{
+    /* aumenta el tamaño del elemento cuando se pone el cursos encima y lo escala a el valor puesto en el parámetro scale*/
+    -webkit-transform:scale(1.2);
+}
+figcaption{
+    font-family: Arial, Melvetica, sans-serif;
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 5px;
+}
+footer{
+    clear: both;
+    padding-top: 100px;
+}
+footer p{
+    font: 1.6em Georgia, "Times New Roman", Times, serif;
+    color: #666;
+    margin: 10px 8px;
+}

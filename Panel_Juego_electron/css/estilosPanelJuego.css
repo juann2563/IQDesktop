@@ -1,0 +1,97 @@
+body{
+	background: #E0E0E0;
+}
+
+.top-buffer { margin-top:20px; }
+a img{
+	height: 120px;
+	width: 120px;
+}
+
+#titulo_QQSI{
+	margin-top: 5px;
+	text-align: center;
+
+}
+@font-face{
+   font-family: Lobster-Regular;
+   src: url(./fonts/Lobster-Regular.ttf) format('truetype');
+}
+h1{
+	font-family: Lobster-regular;
+	font-size: 30px;
+	color: white;
+}
+
+/*#equipos {
+    padding-left: 5px;
+    background: white;
+    width: 321px;
+    height: 650px;
+    box-shadow: 10px 10px 5px 0px #999999;
+}*/
+
+.flex-container {
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: lightgrey;
+    /*pone el contenido justificado en la ventana, con mismo espacio entre elementos*/
+    justify-content: space-around;
+}
+
+.flex-container .flex-item {
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    background-color: white;
+    width: 300px;
+    height: 600px;
+    margin: 10px;
+}
+.flex-container .flex-item2 {
+    padding: 0px;
+    position: relative;
+    background-color: grey;
+    width: 700px;
+    height: 600px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #888888;  
+}
+
+.flex-container .flex-item3 {
+    display: block;
+    border-radius: 5px;
+    background-color: white;
+    width: 300px;
+    height: 600px;
+    margin: 10px;
+}
+.panel-default{
+    border-radius: 10px;
+}
+
+#imgEquipo1{
+    float: left;
+}
+#imgEquipo2{
+    float: left;
+}
+#imgEquipo3{
+    float: left;
+}
+#imgEquipo4{
+    float: left;
+}
+
+.progress-bar {
+    -webkit-transition: width 2.5s ease;
+    transition: width 2.5s ease;
+}
+
+
