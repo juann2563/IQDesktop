@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<script>
+		var SerialPort = require("serialport").SerialPort;
+		var serialport = new SerialPort("COM4");
+		serialport.on('open', function(){
+		  alert('Serial Port Opend');
+		  serialport.on('data', function(data){
+		      alert(data[0]);
+		  });
+});
+	</script>	
+</body>
+</html>
