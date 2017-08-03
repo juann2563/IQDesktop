@@ -15,29 +15,26 @@
 
         <link rel="shortcut icon" href="imagenes/iqi.png" />
         <!-- <link rel="stylesheet" type="text/css" href="estiloHexagonosPos.css"> -->
-        <!--Inicia la aplicación maximizada con la api de nw.js-->
-        <!-- <script type = "text/javascript">
-            var gui = require('nw.gui');  
-            var currentWindow = gui.Window.get(); 
-            currentWindow.maximize(); 
-        </script> -->
-        <script>window.$=window.jQuery = require("./jquery/jquery-3.1.1.min.js")</script>
+        <!-- Insert this line above script imports  -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <!-- include the script -->
+        <script type="text/javascript" src="./jquery/jquery-3.1.1.min.js" ></script>
         <script src="./js/jquery.countdown360.min.js"></script>
         <script type="text/javascript" src="./js/consultarBD.js"></script>
         <script type="text/javascript" src="./js/ConsultaBDAvatarUsers.js"></script>
-
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
     </head>
     <title>IQ Innovation</title>
     <body>
         <!--Preloader antes de cargar todo el panel del juego-->
-        <!-- <div class="container_preloader" id="container_preloader">
+        <div class="container_preloader" id="container_preloader">
             
             <div class="preloader">
                 <p>Cargando...</p>
             </div>   
         </div>
-        <script type="text/javascript" src="js/cerrarPreloader.js"></script> -->
+        <script type="text/javascript" src="js/cerrarPreloader.js"></script>
         <header class="container-fluid" id="header" style="display: none;">
             <div class="row">
                 <div class="col-sm-3">
