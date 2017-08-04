@@ -7,8 +7,10 @@
 </head>
 <body>
 	<script>
+		alert("hola pember");
 		var SerialPort = require("serialport").SerialPort;
 		var serialport = new SerialPort("COM4");
+		alert("hola pember");
 		serialport.on('open', function(){
 		  alert('Serial Port Opend');
 		  serialport.on('data', function(data){
