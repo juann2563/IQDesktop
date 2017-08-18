@@ -5,8 +5,9 @@ var state = 0;
 function insertNumTeam(){
 	if(state == 0){
 		var btn = document.getElementById("btn1");
-		btn.classList.add("selectTeam");	
-	}
+		btn.classList.add("selectTeam");
+		var numteam = $('.selectTeam').text();	
+	}	
 	else{
 		var numteam = $('.selectTeam').text();	
 	}

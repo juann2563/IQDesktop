@@ -226,83 +226,92 @@
     <!--Ventana modal, se abre cuado se preciona en 
     algún hexagono y es donde va a aparecer las preguntas
     que va arrojando la base de datos-->    
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Preguntas</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <p class="lead" id="p_pregunta" align="justify">pregunta</p>
-                                <button class="btn btn-primary btn-block" onclick="mostrarRespuesta();">Respuesta</button>
-                                <p id="p_respuesta" hidden>respuesta</p>
-
-                                
-                            </div>
-                            <div class="col-md-5">
-                                <div id="countdown">
-                                   <script>
-                                       $("#countdown").countdown360({
-                                          radius      : 60.5,
-                                          seconds     : 21,
-                                          strokeWidth : 15,
-                                          fillStyle   : '#0276FD',
-                                          strokeStyle : '#003F87',
-                                          fontSize    : 50,
-                                          fontColor   : '#FFFFFF',
-                                          autostart: false,
-                                          onComplete  : function () { console.log('completed') }
-                                        }).start()
-                                   </script> 
-                                </div>
-                            </div>
-                        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Preguntas</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <section>
-                                <figure>
-                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
-                                    <figcaption>Equipo1</figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
-                                    <figcaption>Equipo1</figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
-                                    <figcaption>Equipo1</figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
-                                    <figcaption>Equipo1</figcaption>
-                                </figure>
-                            </section>
-                        </div> 
-                        <div class="col-md-5 ">
-                            <div class="container">
-                                <div class="form-group">
-                                    <label for="cambiarLetra">Cambiar Letra</label>
-                                    <input type="cambiarLetra" class="form-control" id="letra" placeholder="Letra">
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <p class="lead" id="p_pregunta" align="justify">pregunta</p>
+                                    <button class="btn btn-primary btn-block" onclick="mostrarRespuesta();">Respuesta</button>
+                                    <p id="p_respuesta" hidden>respuesta</p>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <section>
+                                                <figure>
+                                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
+                                                    <figcaption>Equipo1</figcaption>
+                                                </figure>
+                                                <figure>
+                                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
+                                                    <figcaption>Equipo1</figcaption>
+                                                </figure>
+                                                <figure>
+                                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
+                                                    <figcaption>Equipo1</figcaption>
+                                                </figure>
+                                                <figure>
+                                                    <img src="imagenes/avatar/atom.png" alt="atom" width="150" height="150">
+                                                    <figcaption>Equipo1</figcaption>
+                                                </figure>
+                                            </section>
+                                        </div> 
+                                        <div class="col-md-5">
+                                            
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="letra">Cambiar Letra</label>
+                                                    <input type="text" class="form-control" for="letra">
+                                                </div>
+                                                <div class="form-group">
+                                                <!-- con type="button" se evita que funcione como un submit y envie el formulario
+                                                y que funcionando como un botón  normal-->
+                                                    <button type="button" class="btn btn-primary btn-block">Submit</button>    
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="restaurar">Restaurar color por defecto</label>
+                                                    <button type="button">Restaurar</button>
+                                                </div>
+                                            </form>    
+                                        </div>   
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-5">
+                                    <div id="countdown">
+                                       <script>
+                                           $("#countdown").countdown360({
+                                              radius      : 60.5,
+                                              seconds     : 21,
+                                              strokeWidth : 15,
+                                              fillStyle   : '#0276FD',
+                                              strokeStyle : '#003F87',
+                                              fontSize    : 50,
+                                              fontColor   : '#FFFFFF',
+                                              autostart: false,
+                                              onComplete  : function () { console.log('completed') }
+                                            }).start()
+                                       </script> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>   
+                        </div>        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>  
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
+                    
             </div>
         </div>
-    </div>
                       
         <script src="js/bootstrap.min.js"></script>
-        
 
     </body>
 
