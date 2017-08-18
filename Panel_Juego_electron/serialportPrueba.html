@@ -40,7 +40,7 @@
   table.on('end', () => document.getElementById('ports').innerHTML = tableHTML)
   ports.forEach(port => table.write(port))
   table.end();
-  var manufacturer = ports[0].manufacturer; // obtengo el nombre del que realizó el driver para el puerto que se vaa comunicar con el nodemcu
+  var manufacturer = ports[0].manufacturer; // obtengo el nombre del que realizó el driver para el puerto que se vaa comunicar con el nodemc
   if(manufacturer == "Silicon Labs"){
   	alert("com verdadero");
   }
