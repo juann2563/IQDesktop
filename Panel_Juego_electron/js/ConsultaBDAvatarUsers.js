@@ -1,3 +1,5 @@
+
+
 function avatarUsers(equipo){
     var sqlite3 = require('sqlite3').verbose();
     var fs  = require('fs');

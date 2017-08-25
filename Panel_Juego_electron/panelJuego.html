@@ -50,6 +50,7 @@
         </header>
         
         <!--Contenido del juego-->
+        <!--Solo se muestra el contenido cuando termne de cargar el preloader-->
         <div class="flex-container" id="panel" style="display: none;">
             <!--Campo para mostrar los 4 equipos que están participando
             en el instante-->
@@ -93,7 +94,7 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default" style="display: none;">
+                        <div class="panel panel-default" id="panelEquipo3" style="display: none;">
                             <div class="panel-heading" id="equipo3">
                                 <div>
                                     <img id="imgEquipo3" class="img-responsive" src="imagenes/avatar/dna.png" alt="" style="width: 64px; height: 64px;">
@@ -184,7 +185,7 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default" style="display: none;">
+                        <div class="panel panel-default" id="panelEquipo4" style="display: none;">
                             <div class="panel-heading" id="equipo4">
                                 <div>
                                     <img id="imgEquipo4" class="img-responsive" src="imagenes/avatar/globe.png" alt="" style="width: 64px; height: 64px;">
