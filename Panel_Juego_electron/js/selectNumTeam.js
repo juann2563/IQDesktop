@@ -29,9 +29,10 @@ function insertNumTeam(){
 	//ejecuto el query a la base de datos
 	statement.run(numteam);
 	statement.finalize();
-	// Close the database:
+	
 	
 	});
+	// Close the database:
 	db.close();
 	
 	$('.myModal').fadeOut(1000);
