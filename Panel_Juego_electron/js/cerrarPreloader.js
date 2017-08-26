@@ -44,7 +44,5 @@ setTimeout(function(){
 	numEquipos();
 	$('#header').fadeIn(2000);
 	$('#panel').fadeIn(2000);
-
-	
 	
 },9000);

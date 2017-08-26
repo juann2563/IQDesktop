@@ -1,3 +1,4 @@
+
 var preguntas = [];
 var respuestas = [];
 var ifDB = 0; // verifica si ya se había consultado la base de datos
@@ -46,13 +47,6 @@ function consultaBD(){
                 selectPregunta++;    
             }
             
-
-            // rows.forEach(function (row) {
-            //     preguntas[0] = row.Pregunta;
-            //     respuestas[0] = row.Respuesta;
-            //     $('#p_pregunta').text('' + preguntas[0]);
-            //     $('#p_respuesta').text('' + respuestas[0]);  
-            // })  
         });
           
         db.close();
