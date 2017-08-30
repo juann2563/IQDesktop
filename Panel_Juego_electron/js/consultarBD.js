@@ -12,13 +12,10 @@ function mostrarRespuesta(){
 function consultaBD(){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
     
-    //alert(bg);
     //abre la ventan modal y consulta la base de datos
     $('#myModal').modal('show');  
-    // var bg = $("#backImg" + cont).css("background-image");
-    // bg = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
-    //var preguntas = [];
-    //var respuestas = [];
+    $("#p_respuesta").hide();
+
     if(ifDB ==0){
 
         var sqlite3 = require('sqlite3').verbose();
