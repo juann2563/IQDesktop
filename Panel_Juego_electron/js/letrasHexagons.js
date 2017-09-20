@@ -8,7 +8,7 @@ function randomIntFromInterval(min,max)
 //almaceno todos los random obtenidos en un array
 var random = [];
 for(var i=0; i<36; i++){
-	random[i]=randomIntFromInterval(1,28);
+	random[i]=randomIntFromInterval(63,90);
 }
 
 for(var i=1; i<37; i++){
