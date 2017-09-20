@@ -137,7 +137,7 @@
                             <script>
                                 //Se crean todos los hexagonos dentro de una columna de la grid de boostratp
                                 for(var i = 1; i<37; i++){
-                                    $('<div class="hexagon hexagon2" id="hexa'+i+'" onclick ="consultaBD();""><div class="hexagon-in1"><div class="hexagon-in2" id="backImg'+i+'"></div></div></div>').appendTo(".flex-item2");
+                                    $('<div class="hexagon hexagon2" id="hexa'+i+'" onclick ="consultaBD(this.id);""><div class="hexagon-in1"><div class="hexagon-in2" id="backImg'+i+'"></div></div></div>').appendTo(".flex-item2");
                                 }
                             </script>
 

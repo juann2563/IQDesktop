@@ -24,11 +24,11 @@ function insertNumTeam(){
 	var db = new sqlite3.Database(dbFile);
 	db.serialize(function(){
 		// Insert some data using a statement:
-	var statement = db.prepare("INSERT INTO 'configuracion' ('num_equipos') " +
-	'VALUES (?)');
-	//ejecuto el query a la base de datos
-	statement.run(numteam);
-	statement.finalize();
+		var statement = db.prepare("INSERT INTO 'configuracion' ('num_equipos') " +
+		'VALUES (?)');
+		//ejecuto el query a la base de datos
+		statement.run(numteam);
+		statement.finalize();
 	
 	
 	});
