@@ -1,0 +1,16 @@
+Pasos para correr electron con sqlite y serialport
+
+1 - Instalar python2.7 con la variable path en el sistema
+2 - instalar windows-build-tools desde powershell como admin
+https://www.npmjs.com/package/windows-build-tools
+
+3 - instalar node-gyp
+https://github.com/nodejs/node-gyp 
+(npm install -g node-gyp)
+
+4 - Install electron desde un git-bash en la carpeta del proyecto
+https://www.npmjs.com/package/electron
+(npm install electron --save-dev --save-exact)
+
+
+

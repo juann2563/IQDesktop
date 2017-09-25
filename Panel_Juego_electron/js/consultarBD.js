@@ -3,7 +3,8 @@ function mostrarRespuesta(){
     $("#p_respuesta").show(1000);
     $('#countdown').countdown360().stop();
 }
-
+var idPregunta = 0;
+var query = "";
 function consultaBD(id){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
     
@@ -18,73 +19,35 @@ function consultaBD(id){
     var sqlite3 = require('sqlite3').verbose();
     var fs = require('fs');
     var dbFile = './DB/QQSI_DB.db';
-    var dbExists = fs.existsSync(dbFile);
-    var pos = 0;
+    //var dbExists = fs.existsSync(dbFile);
+    
     var db = new sqlite3.Database(dbFile);
-    var ide = 0;
+    
+    var pos = 0;
     db.serialize(function(){
         db.all("SELECT * FROM " + x2, function(err, rows){
             for(var i=0; i<rows.length; i++){
-                pos = i;
-                ide = rows[i].id;
-                if(rows[i].used != ""){
+                if(rows[i].used != "ok"){
+                    pos = i;
                     $('#p_pregunta').text('' + rows[i].pregunta);
                     $('#p_respuesta').text('' + rows[i].respuesta);
+                    idPregunta = rows[i].id;
+                    query = "UPDATE " + x2 + " SET used='ok' " + "WHERE ID=" + idPregunta;
+                    console.log(idPregunta);
                     break;
                 }
-                
             }
         });
-        
-                    //ejecuto el query a la base de datos
-        db.run("UPDATE A SET used = 'ok' WHERE respuesta = $id" ,{
-            $val: "ok",
-            $id: "Aislante"
+        db.serialize(function(){
+            db.run(query);
         });
+        //alert(query);
+        /*var stm = db.prepare(query);
+        stm.run(query);
+        stm.finalize();*/
+        
         
     });
     db.close();
-    // if(ifDB ==0){
-
-    //     var sqlite3 = require('sqlite3').verbose();
-    //     var fs  = require('fs');
-    //     //const path = require('path');
-    //     //const dbPath = path.resolve('QQSI_DB.db');
-    //     // Setup database:
-    //     var dbFile = './DB/QQSI_DB.db';
-    //     var dbExists = fs.existsSync(dbFile);
-
-    //     // Initialize the database:
-    //     var db = new sqlite3.Database(dbFile);
-    //     db.all("SELECT * FROM A", function(err, rows) {
-    //         globalRows = rows.length; // tamaño de la consulta para saber cuando para de mostrar
-    //         for (var i=0; i<rows.length; i++){
-    //             preguntas[i] = rows[i].Pregunta;
-    //             respuestas[i] = rows[i].Respuesta;
-    //         }
-    //         ifDB = 1; // ya consultó una vez la BD ya no es necesario volver a consultar
-    //         if(selectPregunta>rows.length){
-    //             $('#p_pregunta').text("No hay más preguntas por esta letra");
-    //         }
-    //         else{
-    //             $('#p_pregunta').text('' + preguntas[selectPregunta]);
-    //             $('#p_respuesta').text('' + respuestas[selectPregunta]);
-    //             selectPregunta++;    
-    //         }
-            
-    //     });
-          
-    //     db.close();
-    // }
-    // if (ifDB == 1) {
-    //     if(selectPregunta>globalRows-1){
-    //             $('#p_pregunta').text("No hay más preguntas por esta letra");
-    //         }
-    //     else{
-    //         $('#p_pregunta').text('' + preguntas[selectPregunta]);
-    //         $('#p_respuesta').text('' + respuestas[selectPregunta]);
-    //         selectPregunta++;  
-    //     }    
-    // }
-
+    
 }  
