@@ -22,6 +22,7 @@
         <script src="./js/jquery.countdown360.min.js"></script>
         <script type="text/javascript" src="./js/consultarBD.js"></script>
         <script type="text/javascript" src="./js/ConsultaBDAvatarUsers.js"></script>
+        <script type="text/javascript" src="./js/puntuacion.js"></script>
         <!-- Insert this line after script imports -->
         <script>if (window.module) module = window.module;</script>
     </head>
@@ -246,7 +247,7 @@
                                         <div class="col-md-7">
                                             <section>
                                                 <figure>
-                                                    <img src="imagenes/correcto.png" alt="correcto" width="150" height="150">
+                                                    <img src="imagenes/correcto.png" alt="correcto" width="150" height="150" onclick="puntuacionEquipos();">
                                                     <figcaption>Correcto</figcaption>
                                                 </figure>
                                                 <figure>
@@ -304,6 +305,7 @@
                     
             </div>
         </div>
+        <!--Ventana modal que se muestra para dar el puntaje a el equipo corespondiente-->
         <div id="modalEquipos" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
@@ -315,16 +317,21 @@
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <figure>
-                                        <img src="imagenes/avatar/atom.png" alt="">
-                                        <h3 id="numEquipo1">Equipo1</h3>
-                                    </figure>
-                                    <figure>
-                                        <img src="imagenes/avatar/atom.png" alt="">
-                                        <h3 id="numEquipo1">Equipo1</h3>
-                                    </figure>
-                                </div>   
+                                <div class="col-sm-12">
+                                    <section>
+                                        <figure>
+                                            <img src="imagenes/avatar/atom.png" alt="" width="150" height="150">
+                                            <h3 id="numEquipo1">Equipo1</h3>
+                                        </figure>
+                                        <figure>
+                                            <img src="imagenes/avatar/atom.png" alt="" width="150" height="150">
+                                            <h3 id="numEquipo1">Equipo1</h3>
+                                        </figure>
+                                    </section>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <p>Seleccione el equipo al cual desea asignarle puntuación</p>   
+                                </div>  
                                
                             </div>
                         </div>        
