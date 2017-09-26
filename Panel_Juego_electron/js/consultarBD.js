@@ -52,6 +52,8 @@ function consultaBD(id){
     db.close();    
 } 
 
+// funcion que pone la paralabra ok en la base de datos en la columna used para
+// saber que la pregunta ya fue consultada y no volverla a mostrar
 function modalClose(){
     var sqlite3 = require('sqlite3').verbose();
     var fs = require('fs');
@@ -59,8 +61,10 @@ function modalClose(){
 //var dbExists = fs.existsSync(dbFile);
 
     var db = new sqlite3.Database(dbFile);
+    // realiza el query a la base de datos
     db.serialize(function(){
         db.run(query);
     });
+    // cierra el modal
     $('#myModal').modal('hide');
 } 
