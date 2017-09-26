@@ -7,13 +7,19 @@ var idPregunta = 0;
 var query = "";
 
 function consultaBD(id){
-    //var arr = $('#'+ id + ' img').attr('src').split('.');
-    //abre la ventan modal y consulta la base de datos
     
     var x = $('#backImg' + id.substring(4)).css('background-image'); //obtengo la url complea de la imagen
-    var x2 = x.substr(x.length-8); //obtengo los últimos 8carácteres de la url
+    var x2 = x.substr(x.length-8); //obtengo los últimos 8 carácteres de la url
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
-    x2 = String.fromCharCode(parseInt(x2)); // Copnvierto a codifo ascii para generar la letra correspondiente y poder consultar la base de datos
+    if(x2 == '64'){
+        x2 = '42'; // se realiza porque la imagen con nombre 64 es el asterisco(*)
+        // pero en ascii el * es 42 para así poder consultar la tabla que es
+        x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
+    }
+    else{
+        x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
+    }
+    
     //alert(x2);
     var pos = 0;
     
