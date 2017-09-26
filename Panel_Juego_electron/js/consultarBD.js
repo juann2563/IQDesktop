@@ -5,9 +5,9 @@ function mostrarRespuesta(){
 }
 var idPregunta = 0;
 var query = "";
+
 function consultaBD(id){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
-    
     //abre la ventan modal y consulta la base de datos
     $('#myModal').modal('show');  
     $("#p_respuesta").hide();
@@ -16,14 +16,14 @@ function consultaBD(id){
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
     x2 = String.fromCharCode(parseInt(x2)); // Copnvierto a codifo ascii para generar la letra correspondiente y poder consultar la base de datos
     //alert(x2);
+    var pos = 0;
+    
     var sqlite3 = require('sqlite3').verbose();
     var fs = require('fs');
     var dbFile = './DB/QQSI_DB.db';
-    //var dbExists = fs.existsSync(dbFile);
-    
+//var dbExists = fs.existsSync(dbFile);
+
     var db = new sqlite3.Database(dbFile);
-    
-    var pos = 0;
     db.serialize(function(){
         db.all("SELECT * FROM " + x2, function(err, rows){
             for(var i=0; i<rows.length; i++){
@@ -33,21 +33,25 @@ function consultaBD(id){
                     $('#p_respuesta').text('' + rows[i].respuesta);
                     idPregunta = rows[i].id;
                     query = "UPDATE " + x2 + " SET used='ok' " + "WHERE ID=" + idPregunta;
-                    console.log(idPregunta);
+                    //console.log(idPregunta);
                     break;
                 }
             }
         });
-        db.serialize(function(){
-            db.run(query);
-        });
-        //alert(query);
-        /*var stm = db.prepare(query);
-        stm.run(query);
-        stm.finalize();*/
-        
-        
+   
     });
-    db.close();
-    
-}  
+    db.close();    
+} 
+
+function modalClose(){
+    var sqlite3 = require('sqlite3').verbose();
+    var fs = require('fs');
+    var dbFile = './DB/QQSI_DB.db';
+//var dbExists = fs.existsSync(dbFile);
+
+    var db = new sqlite3.Database(dbFile);
+    db.serialize(function(){
+        db.run(query);
+    });
+    $('#myModal').modal('hide');
+} 
