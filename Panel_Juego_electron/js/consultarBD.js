@@ -9,8 +9,7 @@ var query = "";
 function consultaBD(id){
     //var arr = $('#'+ id + ' img').attr('src').split('.');
     //abre la ventan modal y consulta la base de datos
-    $('#myModal').modal('show');  
-    $("#p_respuesta").hide();
+    
     var x = $('#backImg' + id.substring(4)).css('background-image'); //obtengo la url complea de la imagen
     var x2 = x.substr(x.length-8); //obtengo los últimos 8carácteres de la url
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
@@ -25,10 +24,13 @@ function consultaBD(id){
 
     var db = new sqlite3.Database(dbFile);
     db.serialize(function(){
+        var ifQuestions = 0;
         db.all("SELECT * FROM " + x2, function(err, rows){
             for(var i=0; i<rows.length; i++){
                 if(rows[i].used != "ok"){
                     pos = i;
+                    $('#myModal').modal('show');  
+                    $("#p_respuesta").hide();
                     $('#p_pregunta').text('' + rows[i].pregunta);
                     $('#p_respuesta').text('' + rows[i].respuesta);
                     idPregunta = rows[i].id;
@@ -36,6 +38,13 @@ function consultaBD(id){
                     //console.log(idPregunta);
                     break;
                 }
+                else{
+                    ifQuestions++;
+                }
+            }
+            if(ifQuestions == rows.length){
+                alert("No hay mas preguntas por esta letra");
+                $('#myModal').modal('hide');
             }
         });
    
