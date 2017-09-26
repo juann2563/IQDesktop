@@ -30,7 +30,7 @@ function consultaBD(id){
     var db = new sqlite3.Database(dbFile);
     // consulta la base de datos
     db.serialize(function(){
-        db.all("SELECT pregunta, respuesta, id FROM " + x2 + " WHERE used IS NULL", function(err, rows){
+        db.all("SELECT pregunta, respuesta, id FROM " + x2 + " WHERE (used IS NULL or used = '')", function(err, rows){
             // verifica cada pregunta para ver si fue consultada
             if(rows.length == 0){
                 alert("No hay más preguntas por esta letra");
