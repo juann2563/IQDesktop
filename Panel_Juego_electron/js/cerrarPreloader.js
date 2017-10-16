@@ -30,12 +30,6 @@ function numEquipos(){
                 $('.textEquipo4').show();
             }
 
-            // rows.forEach(function (row) {
-            //     preguntas[0] = row.Pregunta;
-            //     respuestas[0] = row.Respuesta;
-            //     $('#p_pregunta').text('' + preguntas[0]);
-            //     $('#p_respuesta').text('' + respuestas[0]);  
-            // })  
         });
             // body...
         });
