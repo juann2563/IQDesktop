@@ -17,11 +17,17 @@ function numEquipos(){
  
             if(rows[0].num_equipos == 3){
             	$('#panelEquipo3').show();
+                $('.imgEquipo3').show();
+                $('.textEquipo3').show();
             	//alert(rows[0].num_equipos);
             }
             if(rows[0].num_equipos == 4){
             	$('#panelEquipo3').show();
             	$('#panelEquipo4').show();
+                $('.imgEquipo3').show();
+                $('.imgEquipo4').show();
+                $('.textEquipo3').show();
+                $('.textEquipo4').show();
             }
 
             // rows.forEach(function (row) {

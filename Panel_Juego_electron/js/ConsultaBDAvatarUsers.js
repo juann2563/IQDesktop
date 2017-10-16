@@ -21,15 +21,21 @@ function avatarUsers(equipo){
             var imagenes = document.getElementsByClassName("imgEquipo" + equipo);
             
                 
-            for(var j = 0; j<imagenes.length; j++){}
+            for(var j = 0; j<imagenes.length; j++){
                 // se le asigna la msima imagen a todos los elementos con la msima clase
                 imagenes[j].src = './'+ rows[parseInt(equipo)-1].avatar; // cambia la imagen a todas la imagenes con la misma clase  
             }
+
+            var nombreEquipo = document.getElementsByClassName("textEquipo" + equipo);
+
+            for(var i =0; i<nombreEquipo.length; i++){
+                nombreEquipo[i].innerHTML = " "+ rows[parseInt(equipo)-1].equipo
                 
                                // $(".imgEquipo" + parseInt(i+1)).attr('src', './'+ rows[parseInt(equipo)-1].avatar);    
+            }
             
             // Se le asigna el nombre al equipo correspondiente
-            $('#textEquipo' + equipo).text('' + rows[parseInt(equipo)-1].equipo);
+            //$('#textEquipo' + equipo).text('' + rows[parseInt(equipo)-1].equipo);
             // Se le asigna el color a cada equipo
             $('#colorEquipo' + equipo).css('background-color','' + rows[parseInt(equipo)-1].color);
             $('#modaltextEquipo4').html('' + rows[parseInt(equipo)-1].equipo);

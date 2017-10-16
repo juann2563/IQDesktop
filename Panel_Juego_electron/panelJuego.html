@@ -35,6 +35,7 @@
                 <p>Cargando...</p>
             </div>   
         </div>
+        <!--Script para cerrar el preloader-->
         <script type="text/javascript" src="js/cerrarPreloader.js"></script>
         <header class="container-fluid" id="header" style="display: none;">
             <div class="row">
@@ -62,7 +63,7 @@
                             <div class="panel-heading" id="equipo1">
                                 <div>
                                     <img id="imgEquipo1" class="img-responsive imgEquipo1" src="imagenes/avatar/atom.png" alt="" style="width: 64px; height: 64px;">
-                                    <h3 id="textEquipo1" style="text-align: center;">Equipo1</h3>
+                                    <h3 id="textEquipo1" class = "textEquipo1" style="text-align: center;">Equipo1</h3>
                                     <script type="text/javascript">
                                         avatarUsers(1);
                                     </script>
@@ -99,7 +100,7 @@
                             <div class="panel-heading" id="equipo3">
                                 <div>
                                     <img id="imgEquipo3" class="img-responsive imgEquipo3" src="imagenes/avatar/dna.png" alt="" style="width: 64px; height: 64px;">
-                                    <h3 id="textEquipo3" style="text-align: center;">Equipo3</h3>
+                                    <h3 id="textEquipo3" class = "textEquipo3" style="text-align: center;">Equipo3</h3>
                                     <script type="text/javascript">
                                         avatarUsers(3);
                                     </script>
@@ -154,7 +155,7 @@
                             <div class="panel-heading" id="equipo2">
                                 <div>
                                     <img id="imgEquipo2" class="img-responsive imgEquipo2" src="imagenes/avatar/genetics.png" alt="" style="width: 64px; height: 64px;">
-                                    <h3 id="textEquipo2" style="text-align: center;">Equipo2</h3>
+                                    <h3 id="textEquipo2" class = "textEquipo2" style="text-align: center;">Equipo2</h3>
                                     <script type="text/javascript">
                                         avatarUsers(2);
                                     </script>
@@ -190,7 +191,7 @@
                             <div class="panel-heading" id="equipo4">
                                 <div>
                                     <img id="imgEquipo4" class="img-responsive imgEquipo4" src="imagenes/avatar/globe.png" alt="" style="width: 64px; height: 64px;">
-                                    <h3 id="textEquipo4" style="text-align: center;">Equipo4</h3>
+                                    <h3 id="textEquipo4" class = "textEquipo4" style="text-align: center;">Equipo4</h3>
                                     <script type="text/javascript">
                                         avatarUsers(4);
                                     </script>
@@ -305,9 +306,9 @@
                     
             </div>
         </div>
-        <!--Ventana modal que se muestra para dar el puntaje a el equipo corespondiente-->
+        <!--Ventana modal que se muestra para dar el puntaje a el equipo con respuesta correcta-->
         <div id="modalEquipos" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -320,29 +321,37 @@
                                 <div class="col-sm-12">
                                     <section>
                                         
-                                            <img class="img-responsive imgEquipo1" src="imagenes/avatar/atom.png" alt="" width="150" height="150">
-                                            <h3 id="numEquipo1">Equipo1</h3>
-                                            
+                                        <figure>
+                                            <img class="img-responsive imgEquipo1" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left;">
+                                            <h3 id="numEquipo1" class="textEquipo1">Equipo1</h3>    
+                                        </figure>
                                         
                                         <figure>
-                                            <img class="img-responsive imgEquipo2" src="imagenes/avatar/atom.png" alt="" width="150" height="150">
-                                            <h3 id="numEquipo1">Equipo1</h3>
+                                            <img class="img-responsive imgEquipo2" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left;">
+                                            <h3 id="numEquipo1" class="textEquipo2">Equipo2</h3>
                                             
                                         </figure>
+                                        
+                                    </section>
+                                </div> 
+                                
+                               
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <section>
                                         <figure>
-                                            <img class="img-responsive imgEquipo3" src="imagenes/avatar/atom.png" alt="" width="150" height="150">
+                                            <img class="img-responsive imgEquipo3" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;">
+                                            <h3 class="textEquipo3" style="display: none;">Equipo3</h3>
                                           
                                         </figure>
                                         <figure>
-                                            <img class="img-responsive imgEquipo4" src="imagenes/avatar/atom.png" alt="" width="150" height="150">
+                                            <img class="img-responsive imgEquipo4" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;">
+                                            <h3 class="textEquipo4" style="display: none;">Equipo4</h3>
                                             
                                         </figure>
                                     </section>
-                                </div> 
-                                <div class="col-sm-6">
-                                    <p>Seleccione el equipo al cual desea asignarle puntuación</p>   
-                                </div>  
-                               
+                                </div>
                             </div>
                         </div>        
                     </div>
