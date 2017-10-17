@@ -5,14 +5,18 @@ function mostrarRespuesta(){
 }
 var idPregunta = 0;
 var query = "";
-
+var imgInteres = 0;
 function consultaBD(id){
     
     var x = $('#backImg' + id.substring(4)).css('background-image'); //obtengo la url complea de la imagen
+    var imgActual = id;
     var x2 = x.substr(x.length-8); //obtengo los últimos 8 carácteres de la url
+    //var imgActual = x;
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
+    
     if(x2 == '64'){
         x2 = '42'; // se realiza porque la imagen con nombre 64 es el asterisco(*)
+        //imgActual = x;
         // pero en ascii el * es 42 para así poder consultar la tabla que es
         x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
     }
@@ -36,7 +40,8 @@ function consultaBD(id){
                 alert("No hay más preguntas por esta letra");
             }
             else{
-                $('#myModal').modal('show');  
+                $('#myModal').modal('show');
+                $('#imgActual').text('' + imgActual);  
                 $("#p_respuesta").hide();
                 $('#p_pregunta').text('' + rows[0].pregunta);
                 $('#p_respuesta').text('' + rows[0].respuesta);
@@ -49,7 +54,7 @@ function consultaBD(id){
     db.close();    
 } 
 
-// funcion que pone la paralabra ok en la base de datos en la columna used para
+// funcion que pone la palabra ok en la base de datos en la columna used para
 // saber que la pregunta ya fue consultada y no volverla a mostrar
 function modalClose(){
     var sqlite3 = require('sqlite3').verbose();
