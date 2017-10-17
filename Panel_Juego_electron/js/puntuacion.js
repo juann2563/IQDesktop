@@ -42,10 +42,10 @@ function puntuacionCorrecto(equipo)
 
 	    var db = new sqlite3.Database(dbFile);
 	    //var query1 = nameEquipo;
-	    var query = "SELECT color FROM usuarios WHERE equipo = " + "\'" + nameEquipo + "\'";
+	    var query = "SELECT color FROM usuarios WHERE equipo = 'zabala'";
 	    // consulta la base de datos
 	    db.serialize(function(){
-	        db.all("SELECT color, institucion FROM usuarios WHERE equipo = " + "'" + nameEquipo + "'", function(err, rows){
+	        db.all("SELECT color FROM usuarios WHERE equipo = " + "'" + nameEquipo + "'", function(err, rows){
 	            //Consulta la base de datos para obtener el color del equipo y asignarlo a la imagen
 	            var imgChange = $("#imgActual").text();
 	            alert(query);
