@@ -74,13 +74,13 @@
                                 <h4>Preguntas Correctas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" id= "Equipo1Correcto" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span id="Equipo1ProgressText">0 Preguntas</span>
+                                        <span id="Equipo1ProgressRight">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Preguntas Incorrectas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0 Preguntas</span>
+                                        <span id="Equipo1ProgressWrong">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Puntos Obtenidos</h4>
@@ -110,19 +110,19 @@
                                 <h4>Preguntas Correctas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" id= "Equipo3Correcto" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span id="Equipo3ProgressText">0% Complete</span>
+                                        <span id="Equipo3ProgressRight">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Preguntas Incorrectas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                        <span id="Equipo3ProgressWrong">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Puntos Obtenidos</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                        <span >0 Puntos</span>
                                     </div>
                                 </div>
                                 <!--Change de value in progress var-->
@@ -165,19 +165,19 @@
                                 <h4>Preguntas Correctas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" id= "Equipo2Correcto" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span id="Equipo2ProgressText">0% Complete</span>
+                                        <span id="Equipo2ProgressRight">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Preguntas Incorrectas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                        <span id="Equipo2ProgressWrong">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Puntos Obtenidos</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                        <span >0 Puntos</span>
                                     </div>
                                 </div>
                                 <!--Change de value in progress var-->
@@ -201,19 +201,19 @@
                                 <h4>Preguntas Correctas</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" id= "Equipo4Correcto" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span id="Equipo4ProgressText">0 Preguntas</span>
+                                        <span id="Equipo4ProgressRight">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Preguntas Incorrectas</h4>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                    <div class="progress-bar progress-bar-danger" id="Equipo4Incorrecto" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+                                        <span id="Equipo4ProgressWrong">0 Preguntas</span>
                                     </div>
                                 </div>
                                 <h4>Puntos Obtenidos</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                        <span >0% Complete</span>
+                                        <span id="Equipo4Puntos">0 Puntos</span>
                                     </div>
                                 </div>
                                 <!--Change de value in progress var-->
@@ -248,11 +248,11 @@
                                         <div class="col-md-7">
                                             <section>
                                                 <figure>
-                                                    <img src="imagenes/correcto.png" alt="correcto" width="150" height="150" onclick="puntuacionEquipos();">
+                                                    <img src="imagenes/correcto.png" id="imgCorrecto" alt="correcto" width="150" height="150" onclick="puntuacionEquipos(1);">
                                                     <figcaption>Correcto</figcaption>
                                                 </figure>
                                                 <figure>
-                                                    <img src="imagenes/incorrecto.png" alt="incorrecto" width="150" height="150">
+                                                    <img src="imagenes/incorrecto.png" alt="incorrecto" width="150" height="150" onclick="puntuacionEquipos(2);">
                                                     <figcaption>Incorrecto</figcaption>
                                                 </figure>
                                                 
@@ -341,12 +341,12 @@
                                 <div class="col-sm-12">
                                     <section>
                                         <figure>
-                                            <img class="img-responsive imgEquipo3" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;">
+                                            <img class="img-responsive imgEquipo3" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;" onclick="puntuacionCorrecto(3)">
                                             <h3 class="textEquipo3" style="display: none;">Equipo3</h3>
                                           
                                         </figure>
                                         <figure>
-                                            <img class="img-responsive imgEquipo4" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;">
+                                            <img class="img-responsive imgEquipo4" src="imagenes/avatar/atom.png" alt="" width="150" height="150" style="float: left; display: none;" onclick="puntuacionCorrecto(4)">
                                             <h3 class="textEquipo4" style="display: none;">Equipo4</h3>
                                             
                                         </figure>
@@ -356,7 +356,7 @@
                         </div>        
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default">Cerrar</button>
+                        <button type="button" class="btn btn-default" onclick="cerrarModalEquipos();">Cerrar</button>
                     </div>  
                 </div>
                     
