@@ -9,7 +9,8 @@ var imgInteres = 0;
 function consultaBD(id){
     
     var x = $('#backImg' + id.substring(4)).css('background-image'); //obtengo la url complea de la imagen
-    var imgActual = id;
+    //obtengo el id de la imagen que se le dio click para luego saber a cual imagen debo cambiarle el color
+    var imgActual = $("#backImg" + id.substring(4)).attr("id");
     var x2 = x.substr(x.length-8); //obtengo los últimos 8 carácteres de la url
     //var imgActual = x;
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
@@ -41,6 +42,7 @@ function consultaBD(id){
             }
             else{
                 $('#myModal').modal('show');
+                //Asigno el id como texto un h1 que no se va a mostrar para luego acceder a el en la ventana modal usuarios para cambiar el color
                 $('#imgActual').text('' + imgActual);  
                 $("#p_respuesta").hide();
                 $('#p_pregunta').text('' + rows[0].pregunta);

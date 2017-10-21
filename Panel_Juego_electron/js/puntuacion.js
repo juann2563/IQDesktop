@@ -57,14 +57,18 @@ function puntuacionCorrecto(equipo)
 	        		{
 	        			//alert("Hoal");
 	        			var imgChange = $("#imgActual").text();
+	        			$('#'+imgChange).css("background", "none" ); 
+	        			$('#'+imgChange).css("background-color", "" + rows[i].color ); 
+	        			//var cosa = $("#" + imgChange + ":last-child").attr("id");
+	        			//alert(imgChange);
 	        			//var parentId = $("#"+imgChange).closest('div').prop('id');
     					//alert(parentId);
 	        			//var imgChange = $("#imgActual").text().match(/\d/g).join("");
 	        			//alert(x);
-	        			$("#backImg" + imgChange).css("background", "none");
-	        			$("#backImg" + ).css("background", "none");
+	        			//$("#backImg" + imgChange).css("background", "none");
+	        			//$("#backImg" + ).css("background", "none");
 	        			//document.getElementById("backImg" + imgChange).style.backgroundColor = "" + rows[i].color;
-	        			alert("ImagenCambiada: " + rows[i].color);
+	        			//alert("ImagenCambiada: " + rows[i].color);
 	        			break;	
 
 	        		}
