@@ -25,8 +25,8 @@ function puntuacionCorrecto(equipo)
 	//var px = $("#Equipo" + equipo + "Correcto").css('width');
 	//Se obtiene el nmbre del equipo al cual se le hizo clic
 		var nameEquipo = $("#textEquipo" + equipo).text();
-		//alert(nameEquipo);
-		var px = $("#Equipo" + equipo + "Correcto").width();
+		// Se obtiene el tamaño actual del slider
+		var px = $("#Equipo" + equipo + "Correcto").width(); 
 		var progress = $('#Equipo' + equipo + "ProgressRight").text().replace(/\D/g,'');
 		var numQuestions = parseInt(progress) + parseInt(1);
 		// Aumenta el porcentaje cada vez que se presione el boton
@@ -47,8 +47,7 @@ function puntuacionCorrecto(equipo)
 	    // consulta la base de datos
 	    db.serialize(function(){
 	        db.all("SELECT *FROM usuarios", function(err, rows){
-	        	//alert(typeof nameEquipo);
-	        	//alert(nameEquipo + rows[0].color);
+	        	//Trae todos los usuarios registrados y solo busca el color del equipo corresponiente
 	        	for(var i=0; i<rows.length; i++)
 	        	{
 	        		//alert(rows[i].equipo + "" + nameEquipo);
@@ -57,26 +56,28 @@ function puntuacionCorrecto(equipo)
 	        		{
 	        			//alert("Hoal");
 	        			var imgChange = $("#imgActual").text();
+	        			//Se le quita el background al hexágono actual
 	        			$('#'+imgChange).css("background", "none" ); 
-	        			$('#'+imgChange).css("background-color", "" + rows[i].color ); 
-	        			//var cosa = $("#" + imgChange + ":last-child").attr("id");
-	        			//alert(imgChange);
-	        			//var parentId = $("#"+imgChange).closest('div').prop('id');
-    					//alert(parentId);
-	        			//var imgChange = $("#imgActual").text().match(/\d/g).join("");
-	        			//alert(x);
-	        			//$("#backImg" + imgChange).css("background", "none");
-	        			//$("#backImg" + ).css("background", "none");
-	        			//document.getElementById("backImg" + imgChange).style.backgroundColor = "" + rows[i].color;
-	        			//alert("ImagenCambiada: " + rows[i].color);
+	        			// se le asigna un color de fondo al hexágono actual de acuerdo al color elegido por el usuario
+	        			$('#'+imgChange).css("background-color", "" + rows[i].color );
+	        			
 	        			break;	
 
 	        		}
-	        	} 
+	        	}
+	        	swal({
+						  title: "Correcto",
+						  text: "Punto para el equipo",
+						  type: "succes",
+						  confirmButtonText: "OK",
+						  confirmButtonColor: "#455A64",
+						});
+
 	        });
 	   
 	    });
-	    db.close();   	
+	    
+	    db.close(); 	
 		Modal_type = 0;
 	}
 	// cuando es incorrecta la pregunta aumenta el progressba incorrecto
