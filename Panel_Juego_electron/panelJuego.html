@@ -265,8 +265,8 @@
                                             
                                             <form>
                                                 <div class="form-group">
-                                                    <label for="letra">Cambiar Letra</label>
-                                                    <input type="text" class="form-control" for="letra">
+                                                    <label id="letraPrueba" for="letra">Cambiar Letra</label>
+                                                    <input type="text" class="form-control"  for="letra">
                                                 </div>
                                                 <div class="form-group">
                                                 <!-- con type="button" se evita que funcione como un submit y envie el formulario
@@ -284,7 +284,45 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div id="countdown">
-                                       <script>
+                                        <script type="text/javascript">
+                                            var SerialPort = require('serialport');
+                                            var port = new SerialPort('COM9', {
+                                                baudRate: 9600
+                                            });
+                                               
+                                            port.open(function (err) {
+                                                if (err) 
+                                               {
+                                                  //return document.write('Error opening port: ', err.message);
+                                               }
+                                               
+                                                // Because there's no callback to write, write errors will be emitted on the port:
+                                                port.write('main screen turn on');
+                                            });
+                                               
+                                              // The open event is always emitted
+                                              // port.on('open', function() {
+                                              //   // open logic
+                                              // });
+                                            port.on('data', function (data) {
+                                                if(data == "R"){
+                                                  
+                                                  $("#letraPrueba").text("cosa");
+                                                  $("#countdown").countdown360().start();
+                                                }
+                                            });
+                                              // Read data that is available but keep the stream from entering "flowing mode"
+                                              /*port.on('readable', function () {
+                                                if(port.read() == "R"){
+                                                  
+                                                  alert("Equipo Rojo");
+                                                }
+                                                //alert(port.read());
+                                                //document.write('Data:', port.read());
+                                              });
+                                        */
+                                        </script>
+                                        <script>
                                            $("#countdown").countdown360({
                                               radius      : 60.5,
                                               seconds     : 21,
@@ -295,7 +333,7 @@
                                               fontColor   : '#FFFFFF',
                                               autostart: false,
                                               onComplete  : function () { console.log('completed') }
-                                            }).start()
+                                            }).stop();
                                        </script> 
                                     </div>
                                 </div>
