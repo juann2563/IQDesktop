@@ -9,6 +9,10 @@ function randomIntFromInterval(min,max)
 var random = [];
 for(var i=0; i<36; i++){
 	random[i]=randomIntFromInterval(63,90);
+	if(random[i]==63)
+	{
+		random[i] = randomIntFromInterval(64,90);
+	}
 }
 
 for(var i=1; i<37; i++){
