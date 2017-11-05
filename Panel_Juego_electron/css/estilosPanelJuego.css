@@ -57,7 +57,7 @@ h1{
 .flex-container .flex-item2 {
     padding: 0px;
     position: relative;
-    background-color: grey;
+    background-color: #1b1b1b;
     width: 700px;
     height: 600px;
     margin-top: 10px;
