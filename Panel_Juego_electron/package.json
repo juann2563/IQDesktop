@@ -2,10 +2,10 @@
   "name": "IQ_Innovation",
   "version": "1.0.0",
   "description": "IQ Innovation App",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "install": "electron-rebuild"
+    "install": "electron-rebuild",
 
     "pack": "build --dir",
     "dist": "build"

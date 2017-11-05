@@ -3,7 +3,7 @@
 function CambiarLetra ()
 {
 	var letraCambiar = $('#myModal #ChangeLetra').val().trim().toUpperCase().charCodeAt();
-	alert(letraCambiar);
+	//alert(letraCambiar);
 	var idImage = $("#imgActual").text();
 	document.getElementById('' + idImage).style.backgroundImage = "url(imagenes/" + letraCambiar +".png)";
 }
