@@ -1,5 +1,5 @@
-
 var Modal_type = 0;
+//var AbrirModal = 0;
 function puntuacionEquipos(opcion){
 	if(opcion == 1)
 	{
@@ -24,6 +24,7 @@ function puntuacionCorrecto(equipo)
 	//aalert(alert($("#Equipo" + equipo + "Correcto").css('width')););
 	//var px = $("#Equipo" + equipo + "Correcto").css('width');
 	//Se obtiene el nmbre del equipo al cual se le hizo clic
+		$("#ifModal").text("yes");
 		var nameEquipo = $("#textEquipo" + equipo).text();
 		// Se obtiene el tamaño actual del slider
 		var px = $("#Equipo" + equipo + "Correcto").width(); 
@@ -79,6 +80,7 @@ function puntuacionCorrecto(equipo)
 	    
 	    db.close(); 	
 		Modal_type = 0;
+		AbrirModal = $("#ifModal").text();
 	}
 	// cuando es incorrecta la pregunta aumenta el progressba incorrecto
 	if(Modal_type == 2)

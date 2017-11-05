@@ -14,15 +14,19 @@ function consultaBD(id){
     var x2 = x.substr(x.length-8); //obtengo los últimos 8 carácteres de la url
     //var imgActual = x;
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
-    
+    var x3; // para almacenar el numero de la letra que necesito para poder restablecer la letra correspondiente
     if(x2 == '64'){
         x2 = '42'; // se realiza porque la imagen con nombre 64 es el asterisco(*)
+        x3 = x2;
+        x2 = 'asterisco';
+
         //imgActual = x;
         // pero en ascii el * es 42 para así poder consultar la tabla que es
-        x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
+        //x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
     }
     else{
-        x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos
+        x3 = x2;
+        x2 = String.fromCharCode(parseInt(x2)); // Convierto a codigo ascii para generar la letra correspondiente y poder consultar la base de datos   
     }
     
     //alert(x2);
@@ -47,6 +51,7 @@ function consultaBD(id){
                 $("#p_respuesta").hide();
                 $('#p_pregunta').text('' + rows[0].pregunta);
                 $('#p_respuesta').text('' + rows[0].respuesta);
+                $("#ImgChange").text(x3);
                 idPregunta = rows[0].id;
                 query = "UPDATE " + x2 + " SET used='ok' " + "WHERE ID=" + idPregunta;
             }
