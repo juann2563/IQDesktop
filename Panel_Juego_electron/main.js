@@ -16,7 +16,7 @@ function createWindow(){
 
 	win.webContents.openDevTools()
 }
-
+/*
 exports.openWindow = () => {
 	let newWin = new BrowserWindow ({width: 400, height:200})
 	newWin.loadURL(url.format({
@@ -24,6 +24,6 @@ exports.openWindow = () => {
 		protocol: 'file',
 		slashes: true
 	}))
-}
+}*/
 
 app.on('ready', createWindow)

@@ -15,8 +15,8 @@ function consultaBD(id){
     //var imgActual = x;
     x2 = ''+ x2[0] + '' + x2[1]; // obtengo los dos primeros caracteres que son los que necesito para saber que imagen es
     var x3; // para almacenar el numero de la letra que necesito para poder restablecer la letra correspondiente
-    if(x2 == '64'){
-        x2 = '42'; // se realiza porque la imagen con nombre 64 es el asterisco(*)
+    if(x2 == '42'){
+        x2 = '64'; // se realiza porque la imagen con nombre 64 es el asterisco(*)
         x3 = x2;
         x2 = 'asterisco';
 

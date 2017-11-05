@@ -1,23 +1,55 @@
 {
-  "name": "electron_pruebas",
+  "name": "IQ_Innovation",
   "version": "1.0.0",
-  "description": "",
+  "description": "IQ Innovation App",
   "main": "index.js",
   "scripts": {
     "start": "electron main.js",
     "install": "electron-rebuild"
+
+    "pack": "build --dir",
+    "dist": "build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ing Juan Zabala",
+  "license": "MIT",
   "dependencies": {
-    "data-table": "^2.0.0",
-    "johnny-five": "^0.11.6",
+    "electron-winstaller": "^2.6.3",
     "node-gyp": "^3.6.2",
     "serialport": "^5.0.0",
     "sqlite3": "^3.1.13"
   },
+  "build": {
+    "appId": "enupal-electronv1",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
   "devDependencies": {
     "electron": "1.7.8",
+    "electron-builder": "^19.45.0",
+    "electron-packager": "^9.1.0",
     "electron-rebuild": "^1.6.0"
   }
 }
