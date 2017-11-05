@@ -39,6 +39,7 @@ h1{
     width: 100%;
     height: 100vh;
     margin: 0;
+    /*Baground de el panel con los hexagonos*/
     background-color: lightgrey;
     /*pone el contenido justificado en la ventana, con mismo espacio entre elementos*/
     justify-content: space-around;
