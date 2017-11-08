@@ -81,6 +81,7 @@ function puntuacionCorrecto(equipo)
 	    db.close(); 	
 		Modal_type = 0;
 		AbrirModal = $("#ifModal").text();
+		$('#modalEquipos').modal('hide');
 	}
 	// cuando es incorrecta la pregunta aumenta el progressba incorrecto
 	if(Modal_type == 2)
@@ -98,6 +99,7 @@ function puntuacionCorrecto(equipo)
 	//Asign text to span in proress bar
 		$('#Equipo' + equipo + "ProgressWrong").text(" " + numQuestions + " Preguntas");
 		Modal_type = 0;
+		$('#modalEquipos').modal('hide');
 	}
 	
 }
